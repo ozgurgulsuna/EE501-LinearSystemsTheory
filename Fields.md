@@ -1,15 +1,15 @@
-## 1.Fields
-----
+
+## Fields ##
+###### Linear Spaces ######
+
 
 **Definition**: A field is a set $F$ with two operations, addition and multiplication, such that the following axioms hold:
 
-**Addition**
+**Addition**  
 
-(A1) $a+b=b+a$ for all $a,b \in F$ (commutativity of addition)
-
-(A2) $(a+b)+c=a+(b+c)$ for all $a,b,c \in F$ (associativity of addition)
-
-(A3) There exists an element $0 \in F$ such that $a+0=a$ for all $a \in F$ (existence of additive identity)
+- (A1) $a+b=b+a$ for all $a,b \in F$ (commutativity of addition)  
+- (A2) $(a+b)+c=a+(b+c)$ for all $a,b,c \in F$ (associativity of addition)  
+- (A3) There exists an element $0 \in F$ such that $a+0=a$ for all $a \in F$ (existence of additive identity)
 This element is commonly denoted by $0_F$.
 
 (A4) For every $a \in F$ there exists an element $-a \in F$ such that $a+(-a)=0_F$ (existence of additive inverse)
