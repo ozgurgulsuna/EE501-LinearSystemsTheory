@@ -1,40 +1,42 @@
-## Linear (Vector) Spaces
-----
+###### Linear Spaces ######
+## Linear (Vector) Spaces ##
 
-**Definition**: A linear space (or vector space) over a field $F$ is a set $V$ with two operations, addition and scalar multiplication, such that the following axioms hold:
+**Definition**: A linear space (or vector space) over a [[field]] $F$ is a set $V$ with two operations, addition and scalar multiplication such that the following axioms hold:
 
-**Vector Addition** : $x + y ,$     $+ : V \times V \rightarrow V$
-
-(A1) $x + y = y + x$   $\forall x,y \in V$ (commutativity)
-
-(A2) $x + (y + z) = (x + y) + z$   $\forall x,y,z \in V$ (associativity)
-
-(A3) There exists an element $0 \in V$ such that $x + 0 = x$   $\forall x \in V$ (existence of additive identity)
-
-(A4) For every $x \in V$ there exist an element $-x \in V$ such that $x + (-x) = 0$   $\forall x \in V$ (existence of additive inverse)
+**Vector Addition** $(+): V \times V \rightarrow V$ such that $x + y \in V$ for all $x,y \in V$.
+- (A1) $x + y = y + x$   $\forall x,y \in V$ (commutativity)  
+- (A2) $x + (y + z) = (x + y) + z$   $\forall x,y,z \in V$ (associativity)  
+- (A3) There exists an element $0 \in V$ such that $x + 0 = x$   $\forall x \in V$ (existence of additive identity)  
+- (A4) For every $x \in V$ there exist an element $-x \in V$ such that $x + (-x) = 0$   $\forall x \in V$ (existence of additive inverse)
 
 
-**Scalar Multiplication** : $\alpha x ,$     $\cdot : F \times V \rightarrow V$
+**Scalar Multiplication** $(\cdot): F \times V \rightarrow V$ such that $\alpha x \in V$ for all $\alpha \in F$ and $x \in V$.  
+- (M1) $\alpha (bx) = (\alpha b)x$   $\forall \alpha, \beta \in F$ and $\forall x \in V$ (associativity)  
+- (M2) $\alpha(x+y) = \alpha x + \alpha y$   $\forall \alpha \in F$ and $\forall x,y \in V$ (distributivity)  
+- (M3) $(\alpha + \beta)x = \alpha x + \beta x$   $\forall \alpha, \beta \in F$ and $\forall x \in V$ (distributivity)  
+- (M4) $1_Fx = x$   $\forall x \in V$ (existence of multiplicative identity)
 
-(M1) $\alpha (bx) = (\alpha b)x$   $\forall \alpha, \beta \in F$ and $\forall x \in V$ (associativity)
+Elements of the vector space are called vectors, or points.
 
-(M2) $\alpha(x+y) = \alpha x + \alpha y$   $\forall \alpha \in F$ and $\forall x,y \in V$ (distributivity)
+Scalar multiplication in a vector space depends on the field $F$. Thus when we say $x \in V$, we mean that $x$ is a vector in the vector space $V$ over the field $F$ or $(V,F)$.  
+For example, $\mathbb{R}^n$ is a vector space over the field $\mathbb{R}$, and $\mathbb{C}^n$ is a vector space over the field $\mathbb{C}$.
 
-(M3) $(\alpha + \beta)x = \alpha x + \beta x$   $\forall \alpha, \beta \in F$ and $\forall x \in V$ (distributivity)
-
-(M4) $1_Fx = x$   $\forall x \in V$ (existence of multiplicative identity)
+> The simplest vector space contains only one point. In other words, $\{0\}$ is a vector space.
 
 
-<ins>Example</ins>: Show that $x 0_F  = 0_V$ for all $x \in V$
+--------------------------------------------------------------------------
+<ins>Example</ins>: Show that $x 0_F  = 0_V$ for all $x \in V$  
 <ins>Proof:</ins>
 1. $y = x0_F = 0_V$ is assumed to be true.
 2. $x + y = x + x0_F = x1_F+ x0_F$      (M4)
 3. $x + y = x(1_F + 0_F) = x1_F$            (M3)
 4. $x + y + (-x) = x1_F + (-x1_F)$      (A4)
 5. $y = x(1_F + (-1_F)) = x0_V = 0_V$     (A2)    $\blacksquare$
-
-<ins>Example</ins>: Show that $x0_F = 0_v$
-<ins>Proof:</ins>
+  
+ 
+------------------------------------------------------------------------------------------
+<ins>Example</ins>: Show that $x0_F = 0_v$  
+<ins>Proof:</ins>  
 1. Assume $y = x0_F$ and show $y = 0_V$.  
 2. $x + y = x + x0_F = x1_F + x0_F$       (M4)
 3. $x + y = x1_F + x0_F = x(1_F + 0_F)$   (M3)
@@ -43,23 +45,35 @@
 6. $x + y + (-x) = x + (-x)$               (A4)
 7. $y = x + (-x) = 0_V$                         (A4)    $\blacksquare$
 
-**Remark**: A vector space has a unique additive identity.
+>**Remark**: A vector space has a unique additive identity.
 
-### [[Function Space]] ###
-**Definition**: Let $X$ be a set and $F$ be a field. The set of all functions from $X$ to $F$ is denoted by $F^X$.
 
+###### Linear Spaces ######
+### Function Space ###
+**Definition**: Let $S$ be a set and $F$ be a field. The set of all functions from $S$ to $F$ is denoted by $F^S$.
+
+For $f,g \in F^S$, the sum $f+g \in F^S$ is the function defined by  
+
+$$(f+g)(x) = f(x) + g(x), \ \forall x \in S$$
+
+For $f \in F^S$ and $\alpha \in F$, the product $\alpha f \in F^S$ is the function defined by
+
+$$(\alpha f)(x) = \alpha f(x), \ \forall x \in S$$
+
+------------------------------------------------------------------------------------------  
 <ins>Example</ins>: Set of all [[polynomials]] with degree n with coefficients in $F$ is denoted by $F[x]_n$.
 
 What essentially function spaces are, is that they are the set of all functions from a set to a field. For example, the set of all polynomials with degree n with coefficients in $F$ is denoted by $F[x]_n$.
 
-### [[Subspace]] ###
+###### Linear Spaces ######
+### Subspace ###
+
 **Definition**: Let $V$ be a vector space. A subset $W$ of $V$ is called a [[subspace]] of $V$ iff $W$ is a vector space with respect to the operations of $V$, that is,
 
-(S1) $w_1 + w_2 \in W$   $\forall w_1, w_2 \in W$ (closure under addition)
+- (S1) $w_1 + w_2 \in W$   $\forall w_1, w_2 \in W$ (closure under addition)
+- (S2) $c w \in W$   $\forall c \in F$ and $\forall w \in W$ (closure under scalar multiplication)
 
-(S2) $c w \in W$   $\forall c \in F$ and $\forall w \in W$ (closure under scalar multiplication)
-
-**Remark**: $W$ is a subspace of $V$ iff $W$ is nonempty and $W$ is closed under addition and scalar multiplication. All other axioms are inherited from the original vector space $V$.
+> **Remark**: $W$ is a subspace of $V$ iff $W$ is nonempty and $W$ is closed under addition and scalar multiplication. All other axioms are inherited from the original vector space $V$.
 
 <ins>Example</ins>: linear space $V = \mathbb{R}^2$, subspace $W = [\alpha \space 0]^T \in \mathbb{R}^2 : \alpha \in \mathbb{R}$  
 <ins>Solution</ins>: Let  $w_1 = [\alpha_1 \space 0]^T$ and $w_2 = [\alpha_2 \space 0]^T$ and $c \in \mathbb{R}$, 
@@ -89,8 +103,8 @@ subspace $W_4 =$ set of all functions which are discontinious at $t=1$ [-]
 [+]: $W_1, W_2, W_3$ are subspaces of $V$  
 [-]: $W_4$ is not a subspace of $V$
 
-
-### [[Basis]] ###
+###### Linear Spaces ######
+## [[Basis]] ##
 
 **Definition**: Let $V$ be a vector space. A (finite) set of vectors $S=\{v_1, v_2, \dots, v_n\}$ is called a [[basis set]] for $V$ iff
 
@@ -148,7 +162,8 @@ $B = \begin{Bmatrix}cos(t), sin(t)\end{Bmatrix}$  $y = cos(t-\frac{\pi}{3})$ $[y
 
 **Remark**: The representation of a vector $y$ in a basis $B$ is unique. The representation of a vector $y$ in a basis $B$ is called the [[coordinate vector]] of $y$ with respect to $B$.
 
-### [[Ordered Basis]] ###
+###### Linear Spaces ######
+## [[Ordered Basis]] ##
 
 **Definition**: Let $V$ be a vector space. An ordered set of basis vectors $S=\{v_1, v_2, \dots, v_n\}$ is called an [[ordered basis]] for $V$.
 If $y = (x_1,x_2,...,x_n)$ is an ordered basis for $V$, then every vector $x \in V$ can be written as a linear combination of the basis vectors as follows:

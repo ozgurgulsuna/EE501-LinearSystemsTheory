@@ -1,16 +1,15 @@
-## [[Norm]] ##
 ###### Normed Linear Spaces ######
+## [[Norm]] ##
+
 **Definition**: Let $(V,F)$ be a vector space. A [[norm]] on $V$ is a function  
 
 $\| \cdot \| : V  \rightarrow \mathbb{R} \geq 0$
 
 such that for all $x,y \in V$ and $c \in F$ the following axioms hold:
 
-&emsp;(P1) $\|x\| \geq 0$ and $\|x\| = 0$ iff $x=0_v$ (positive definiteness)  
-
-&emsp;(P2) $\|cx\| = |c| \|x\|$  $\space \space \space\forall c \in \mathbb{R}$ (homogeneity)  
-
-&emsp;(P3) $\|x+y\| \leq \|x\| + \|y\|$ (triangle inequality)
+- (P1) $\|x\| \geq 0$ and $\|x\| = 0$ iff $x=0_v$ (positive definiteness)  
+- (P2) $\|cx\| = |c| \|x\|$  $\space \space \space\forall c \in \mathbb{R}$ (homogeneity)  
+- (P3) $\|x+y\| \leq \|x\| + \|y\|$ (triangle inequality)
 
 The triplet $(V,F,\| \cdot \|)$ is called a [[normed linear space]].
 
