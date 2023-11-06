@@ -38,9 +38,52 @@ subspace $W_4 =$ set of all functions which are discontinuous at $t=1$ [-]
 
 ------------------------------------------------------------------------------
 <ins>Example</ins>:  Show that $Y+Z$ is a linear subspace of $X$, if $Y$ and $Z$ are also linear subspaces of $X$.  
-<ins>Proof:</ins> 
+<ins>Proof:</ins> Let $w_1+w_2 \in W$, with  
+$w_1=y_1+z_1$ where $y_1 \in Y, \ z_1 \in Z$  
+$w_2=y_2+z_2$ where $y_2 \in Y, \ z_2 \in Z$  
+then  
+$$\begin{align*}
+w_1+w_2=y_1+z_1+y_2+z_2 &=(y_1+y_2)+(z_1+z_2) \\
+y_1+y_2 \in Y , z_1+z_2 \in Z &\Rightarrow w_1+w_2 \in Y+Z
+\end{align*}$$  
+Shows that $Y+Z$ is closed under addition. (lemma 1)  
 
+Let $c w_1 \in W$, $\forall c \in F$
+$$\begin{align*}
+c w_1=c(y_1+z_1) &=(cy_1)+(cz_1) \\
+cy_1 \in Y , cz_1 \in Z &\Rightarrow cw_1 \in Y+Z
+\end{align*}$$  
+Shows that $Y+Z$ is closed under scalar multiplication. (lemma 2)
+Hence $Y+Z$ is a linear subspace of $X$.  
 
+------------------------------------------------------------------------------
+<ins>Example</ins>:  If $Y$ and $Z$ are subspaces of X, then $Y \cap Z$ is a subspace of $X$.  
+$~$<ins>Proof:</ins>
+- $0 \in Y$, $0 \in Z$ then by definition $0 \in Y \cap Z$  
+- for $u,w \in Y$ and  $u,w \in Z \implies u,w \in Y \cap Z$  
+
+now we need to show that $u+w \in Y \cap Z$ (closure under addition)
+- starting  $u \in Y, w \in Y \implies u+w \in Y$
+- similarly $u \in Z, w \in Z \implies u+w \in Z$
+    - hence $u+w \in Y \cap Z$
+
+now we need to show that $cu \in Y \cap Z$ (closure under scalar multiplication)
+- starting  $u \in Y \implies cu \in Y$, $\forall c \in F$
+- similarly $u \in Z \implies cu \in Z$, $\forall c \in F$
+    - hence $cu \in Y \cap Z$
+
+Hence $Y \cap Z$ is a subspace of $X$.
+
+------------------------------------------------------------------------------
+<ins>Example</ins>: For $Y$ and $Z$ are subspaces of $X$, show that whether $Y \cup Z$ is a subspace of $X$ or not.  
+$~$<ins>Proof:</ins>
+Prove by contradiction.
+- Assume $Y \cup Z$ is a subspace of $X$. Then $Y \cup Z$ is closed under addition and scalar multiplication.
+- Let $Y =\{(y,0):y \in \mathbb{R}\}$ and $Z =\{(0,z):z \in \mathbb{R}\}$.
+- Then $u_1=(1,0) \in Y$ and $u_2=(0,1) \in Z$.
+- $u_1+u_2=(1,1) \notin Y \cup Z$.
+
+$~$
 
 ###### Subspaces ######
 ### Sums of Subspaces ###
