@@ -33,7 +33,6 @@ For example, $\mathbb{R}^n$ is a vector space over the field $\mathbb{R}$, and $
 4. $x + y + (-x) = x1_F + (-x1_F)$      (A4)
 5. $y = x(1_F + (-1_F)) = x0_V = 0_V$     (A2)    $\blacksquare$
   
- 
 ------------------------------------------------------------------------------------------
 <ins>Example</ins>: Show that $x0_F = 0_v$  
 <ins>Proof:</ins>  
@@ -58,50 +57,12 @@ $$(f+g)(x) = f(x) + g(x), \ \forall x \in S$$
 
 For $f \in F^S$ and $\alpha \in F$, the product $\alpha f \in F^S$ is the function defined by
 
-$$(\alpha f)(x) = \alpha f(x), \ \forall x \in S$$
+$$(\alpha f)(x) = \alpha f(x), \ \forall x \in S$$  
 
-------------------------------------------------------------------------------------------  
+------------------------------------------------------------------------------
 <ins>Example</ins>: Set of all [[polynomials]] with degree n with coefficients in $F$ is denoted by $F[x]_n$.
 
 What essentially function spaces are, is that they are the set of all functions from a set to a field. For example, the set of all polynomials with degree n with coefficients in $F$ is denoted by $F[x]_n$.
-
-###### Linear Spaces ######
-### Subspace ###
-
-**Definition**: Let $V$ be a vector space. A subset $W$ of $V$ is called a [[subspace]] of $V$ iff $W$ is a vector space with respect to the operations of $V$, that is,
-
-- (S1) $w_1 + w_2 \in W$   $\forall w_1, w_2 \in W$ (closure under addition)
-- (S2) $c w \in W$   $\forall c \in F$ and $\forall w \in W$ (closure under scalar multiplication)
-
-> **Remark**: $W$ is a subspace of $V$ iff $W$ is nonempty and $W$ is closed under addition and scalar multiplication. All other axioms are inherited from the original vector space $V$.
-
-<ins>Example</ins>: linear space $V = \mathbb{R}^2$, subspace $W = [\alpha \space 0]^T \in \mathbb{R}^2 : \alpha \in \mathbb{R}$  
-<ins>Solution</ins>: Let  $w_1 = [\alpha_1 \space 0]^T$ and $w_2 = [\alpha_2 \space 0]^T$ and $c \in \mathbb{R}$, 
-
-(S1) $w_1 = \begin{bmatrix} \alpha_1 \\ 0 \end{bmatrix}$ and $w_2 = \begin{bmatrix} \alpha_2 \\ 0 \end{bmatrix}$ be two arbitrary elements of $W$. Then $w_1 + w_2 = \begin{bmatrix} \alpha_1 + \alpha_2 \\ 0 \end{bmatrix} \in W$
-
-(S2) $c w1 = \begin{bmatrix} c \alpha_1 \\ 0 \end{bmatrix} \in W$ for all $c \in \mathbb{R}$.
-
-Hence $W$ is a subspace of $V$.
-
-<ins>Example</ins>: linear space $V = \mathbb{R}^2$, subspace $W = [\alpha \space 1]^T \in \mathbb{R}^2 : \alpha \in \mathbb{R}$  
-<ins>Solution</ins>: Let  $w_1 = [\alpha_1 \space 1]^T$ and $w_2 = [\alpha_2 \space 1]^T$
-
-(S1) $w_1 = \begin{bmatrix} \alpha_1 \\ 1 \end{bmatrix}$ and $w_2 = \begin{bmatrix} \alpha_2 \\ 1 \end{bmatrix}$ be two arbitrary elements of $W$. Then $w_1 + w_2 = \begin{bmatrix} \alpha_1 + \alpha_2 \\ 2 \end{bmatrix} \notin W$
-
-**Remark**: In $\mathbb{R}^2$, a subspace is a line through the origin. Any line through the origin is a subspace of $\mathbb{R}^2$.
-
-In function spaces, an example can be given as follows:  
-<ins>Example</ins>: linear space $V =$ set of all real-valued functions of a real variable $t\rightarrow f(t)$;  
-subspace $W_1 =$ set of all continuous functions [+]  
-subspace $W_2 =$ set of all constant functions  [+]  
-subspace $W_3 =$ set of all functions periodic with $\pi$ [+]
-subspace $W_4 =$ set of all functions which are discontinious at $t=1$ [-]  
-
-**Remark**: 0 vector is a subspace of any vector space, even subspace of itself, and it is the smallest subspace.
-
-[+]: $W_1, W_2, W_3$ are subspaces of $V$  
-[-]: $W_4$ is not a subspace of $V$
 
 ###### Linear Spaces ######
 ## [[Basis]] ##

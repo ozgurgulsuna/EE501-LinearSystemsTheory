@@ -23,7 +23,7 @@ This element is commonly denoted by $(-a)$.
 
 - (D1) $a \cdot (b+c) = a \cdot b + a \cdot c$ for all $a,b,c \in F$ (distributivity of multiplication over addition)
 
-At least two elements must exist in a field, the additive identity $0_F$ and the multiplicative identity $1_F$.
+At least two elements must exist in a field, the additive identity $0_F$ and multiplicative identity $1_F$.
 
 Field examples include $\mathbb{R}$, $\mathbb{C}$, $\mathbb{Q}$, $\mathbb{Z}_p$ where $p$ is a prime number. $\mathbb{R}$ are the real numbers, $\mathbb{C}$ are the [[complex numbers]], $\mathbb{Q}$ are the rational numbers, $\mathbb{Z}_p$ are the integers modulo $p$.
 
