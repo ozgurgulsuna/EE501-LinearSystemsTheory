@@ -83,6 +83,16 @@ Prove by contradiction.
 - Then $u_1=(1,0) \in Y$ and $u_2=(0,1) \in Z$.
 - $u_1+u_2=(1,1) \notin Y \cup Z$.
 
+------------------------------------------------------------------------------
+<ins>Example</ins>: Is $\mathbb{R}^2$ a subspace of complex vector space $\mathbb{C}^2$?  
+$~$<ins>Proof:</ins> Note that we consider complex vector space, so if $x \in \mathbb{R}^2$ then $x \in \mathbb{C}^2$.  
+- $i \in \mathbb{C}$ and $x \in \mathbb{R}^2$ then $ix \in \mathbb{R}^2$.
+    - $i(1,1) =(i,i) \notin \mathbb{R^2}$
+
+Hence $\mathbb{R}^2$ is not a subspace of $\mathbb{C}^2$.
+
+
+
 $~$
 
 ###### Subspaces ######
