@@ -55,8 +55,8 @@ Geometric visualization of the $p$-norms in $\mathbb{R}^2$ is given below.
  
 <p align="center">
   <img rotate ="90" 
-  style="filter: invert(88%);"
-  src="Lecture Notes/figures/vector-p-norms.svg" />
+  style="filter: invert(88.4%);"
+  src="figures/vector-p-norms.svg" />
 </p>
 
 <ins>Example</ins>: Let $\|x\|_{\frac{1}{2}} = ({|\alpha_1|^{1/2}+|\alpha_2|^{1/2})}^2$ where, $x=\begin{bmatrix} \alpha_1 \\ \alpha_2 \end{bmatrix}$ is $\|x\|_{\frac{1}{2}}$ a norm ?  
@@ -108,7 +108,7 @@ A nice visualization of the induced norm is given below.
 <p align="center">
   <img rotate ="90" 
   style="filter: invert(88.4%);"
-  src="Lecture Notes/figures/induced-norm.png"
+  src="figures/induced-norm.png"
 />
 
 ------------------------------------------------------------------------------------------
