@@ -48,7 +48,6 @@ For example, $\mathbb{R}^n$ is a vector space over the field $\mathbb{R}$, and $
 >**Remark**: A vector space has a unique additive identity.
 
 
-###### Linear Spaces ######
 ### Function Space ###  
 **Definition**: Let $S$ be a set and $F$ be a field. The set of all functions from $S$ to $F$ is denoted by $F^S$.
 
@@ -63,7 +62,8 @@ $$(\alpha f)(x) = \alpha f(x), \ \forall x \in S$$
 ------------------------------------------------------------------------------------------
 <ins>Example</ins>: Set of all [[polynomials]] with degree n with coefficients in $F$ is denoted by $F[x]_n$.
 
-	What essentially function spaces are, is that they are the set of all functions from a set to a field. For example, the set of all polynomials with degree n with coefficients in $F$ is denoted by $F[x]_n$.
+
+> What essentially function spaces are, is that they are the set of all functions from a set to a field. For example, the set of all polynomials with degree n with coefficients in $F$ is denoted by $F[x]_n$.
 
 ------------------------------------------------------------------------------------------
 #EE501 - [[Linear Systems Theory]] at [[METU]]

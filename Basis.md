@@ -1,5 +1,5 @@
 ###### Linear Spaces ######
-## [[Basis]] ##
+## Basis ##
 
 **Definition**: Let $V$ be a vector space. A (finite) set of vectors $S=\{v_1, v_2, \dots, v_n\}$ is called a [[basis set]] for $V$ iff
 
@@ -58,10 +58,10 @@ $B = \begin{Bmatrix}cos(t), sin(t)\end{Bmatrix}$  $y = cos(t-\frac{\pi}{3})$ $[y
    Since $B$ is linearly independent, $c_1 - d_1 = 0$ and $c_2 - d_2 = 0$  
    Hence $c_1 = d_1$ and $c_2 = d_2$  $\blacksquare$
 
-**Remark**: The representation of a vector $y$ in a basis $B$ is unique. The representation of a vector $y$ in a basis $B$ is called the [[coordinate vector]] of $y$ with respect to $B$.
+> **Remark**: The representation of a vector $y$ in a basis $B$ is unique. The representation of a vector $y$ in a basis $B$ is called the [[coordinate vector]] of $y$ with respect to $B$.
 
-###### Linear Spaces ######
-## [[Ordered Basis]] ##
+------------------------------------------------------------------------------------------
+## Ordered Basis ##
 
 **Definition**: Let $V$ be a vector space. An ordered set of basis vectors $S=\{v_1, v_2, \dots, v_n\}$ is called an [[ordered basis]] for $V$.
 If $y = (x_1,x_2,...,x_n)$ is an ordered basis for $V$, then every vector $x \in V$ can be written as a linear combination of the basis vectors as follows:
@@ -70,8 +70,6 @@ If $y = (x_1,x_2,...,x_n)$ is an ordered basis for $V$, then every vector $x \in
 **Theorem:** Let $V$ be an n-dimensional vector space over $\mathbb{R}$. Let $B_1$ and $B_2$ be two bases for $V$. Then there exists a unique $n \times n$ real invertible matrix $P$ such that $[x]_{B_2} = P[x]_{B_1}$ for all $x \in V$.
 
 <ins>Proof</ins>: By construction.
-
-
 
 
 
@@ -94,6 +92,15 @@ Find the matrix $P$ such that $[x]_{B_1} = P[x]_{B_2}$ for all $x \in V$.
 11. $P = \begin{bmatrix} 1 & 1 & 1 \\ 0 & 1 & 2 \\ 0 & 0 & 1 \end{bmatrix}$ 
 
 
+------------------------------------------------------------------------------------------
+<ins>Example</ins>: Show that Matrix $P$ is invertible.  
+$~$<ins>Proof</ins>: Let $V$ be an n-dimensional vector space over $\mathbb{R^{n\times n}}$. $B_1$ and $B_2$ are bases for $V$. A vector $v$ holds,  
+- $[v]_{B_1} = P[v]_{B_2}$
+- $\exist \ Q \in \mathbb{R^{n \times n}}$ s.t.
+   - $[v]_{B_2} = Q[v]_{B_1}$
+   - $[v]_{B_1} = P[v]_{B_2} = P(Q[v]_{B_1}) = (PQ)[v]_{B_1}$ implies $PQ = I$
+   - similarly $QP = I$
+- $P$ is invertible and $P^{-1} = Q$  $\blacksquare$
 
------
+------------------------------------------------------------------------------------------
 #EE501 - [[Linear Systems Theory]] at [[METU]]
