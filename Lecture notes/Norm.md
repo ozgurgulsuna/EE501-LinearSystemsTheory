@@ -108,8 +108,8 @@ A nice visualization of the induced norm is given below.
 <p align="center">
   <img rotate ="90" 
   style="filter: invert(88.4%);"
-  src="figures/induced-norm.png"
-/>
+  src="figures/induced-norm.png" />
+</p>
 
 ------------------------------------------------------------------------------------------
 #EE501 - [[Linear Systems Theory]] at [[METU]]
