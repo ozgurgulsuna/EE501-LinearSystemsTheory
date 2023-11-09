@@ -43,6 +43,70 @@ $$ a \odot b = e^{ln(a)ln(b)}$$
 
 2. 
 
+
+
+------------------------------------------------------------------------------------------
+**Q3.** Let $(V, F)$ be a linear space. Given $a \in F$ and $v \in V$ prove the following.
+
+1.  $a0_V = 0_V$
+2.  $-0_V = 0_V$
+3.  $0_Fv = 0_V$
+4.  $(-1_F)v = -v$
+
+
+
+------------------------------------------------------------------------------------------
+**_Solution_**:
+1. $a0_V = a(0_V + 0_V) = a0_V + a0_V$  
+   $a0_V + (-a0_V) = a0_V + a0_V + (-a0_V)$  
+   $0_V = a0_V \ \blacksquare$  
+
+A more rigorous proof would be as follows.
+
+1. $a0_V = a(v+(-v))$  
+   $a0_V = av + a(-v)$  
+   $a0_V = av + (-a)v$  
+   $a0_V = (a + (-a))v$  
+   $a0_V = 0_Fv$  
+   $a0_V = 0_V \ \blacksquare$  
+
+This solution takes into account of two other lemma to be proven.  
+       **Lemma 1**: $-v = -1_fv$  
+       **Lemma 2**: $0_Fv = 0_V$
+
+2. $-0_V = -0_V + 0_V$  
+   $-0_V = -0_V + (0_V + 0_V)$  
+   $-0_V = (-0_V + 0_V) + 0_V$  
+   $-0_V = 0_V + 0_V$  
+   $-0_V = 0_V \ \blacksquare$  
+
+3. $0_Fv = (0_F + 0_F)v$  
+   $0_Fv = 0_Fv + 0_Fv$  
+   $0_Fv + (-0_Fv) = 0_Fv + 0_Fv + (-0_Fv)$  
+   $0_V = 0_Fv \ \blacksquare$  
+
+another solution could be as follows.
+
+3. $0_Fv = 0_Fv$  
+   $0_Fv + v = 0_Fv + v$  
+   $0_Fv + v = 0_Fv + 1_Fv$  
+   $0_Fv + v = (0_F + 1_F)v$  
+   $0_Fv + v = 1_Fv$  
+   $0_Fv + v = v$  
+   $0_Fv = 0_V  \ \blacksquare$   
+
+4. $(-1_F)v = (-1_F)v + 0_V$  
+   $(-1_F)v = (-1_F)v + (v + (-v))$  
+   $(-1_F)v = ((-1_F)v + (1_F)v) + (-v)$  
+   $(-1_F)v = ((-1_F + 1_F)v) + (-v)$  
+   $(-1_F)v = 0_Fv + (-v)$  
+   $(-1_F)v = 0_V + (-v)$  
+   $(-1_F)v = -v \ \blacksquare$  
+
+
+
+
+
 **Definition**: Let $(V,F)$ be a vector space. A sequence of vectors $\{x_n\}_{n=1}^{\infty}$ in $V$ is said to converge to a vector $x \in V$ if for every $\epsilon > 0$ there exists an integer $N$ such that $\|x_n - x\| < \epsilon$ for all $n \geq N$. In this case we write $x_n \rightarrow x$ as $n \rightarrow \infty$.
 
 > **Remark**: The sequence is said to be **convergent** if it converges to some vector $x \in V$. Otherwise, it is said to be **divergent**.
