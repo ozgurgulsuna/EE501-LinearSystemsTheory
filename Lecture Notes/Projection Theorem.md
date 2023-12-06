@@ -1,3 +1,4 @@
+###### Direct Sum ######
 ## Hilbert Projection Theorem ##
 
 Let $H$ be a Hilbert space ( inner product space that is complete with respect to the norm induced by the inner product) and $M$ be a finite dimensioal subspace of $H$. Then for any $x \in H$, there exists a unique $y \in M$ such that
@@ -13,6 +14,22 @@ has a unique solution $y$. In other words "we can find a unique point in $M$ tha
 <ins>Example:</ins> Let $V=\mathbb{R}^2$ and $M = \text{span}\{[1,1]^T\}$. Find the best approximation of $x=[1,2]^T$ in $M$.
 
 _<ins>Solution:</ins>_ 
+
+
+
+#### Solution of Linear Equations ####
+
+Consider the linear equation as,
+
+$$ Ax = B $$
+
+$$ \text{where $A \in \mathbb{C}^{m \times n}$, $B \in \mathbb{C}^{m \times 1}$ and $x \in \mathbb{C}^{n \times 1}$ is unknown.} $$
+
+a\) **solution exists**: when $b \in \text{R}(A)$  
+b\) **solution is unique**: when $N(A) = \{0\}$
+
+
+
 
 
 
