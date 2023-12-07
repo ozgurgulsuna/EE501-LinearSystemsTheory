@@ -1,11 +1,10 @@
-###### EE501 - HW1 ######
+###### EE501 - Problem Set w/ Solutions ######
 ## Problem Set ##
 
 **Q1.** Let $F$ be a field. For an arbitrary element $a \in F$ prove the following.
 1. The additive inverse $−a$ is unique.
 2. The multiplicative inverse $a^{−1}$ is unique given that $a \neq 0$.  
 
-------------------------------------------------------------------------------------------
 **_Solution_**:  
 1.  Let $v \in F$ is an arbitrary element in $F$. Assume that $v$ has two additive inverses with $w_1,w_2 \in F$.Then,  
    $v+w_1 = 0 \ \rightarrow w_1 = -v$  
@@ -33,15 +32,12 @@ $$ a \odot b = e^{ln(a)ln(b)}$$
 2. Find the additive inverse $-a$ and the multiplicative inverse $a^{-1}$ for an arbitrary $a \in F$.
 3. Prove that $F$ is a field.
 
-------------------------------------------------------------------------------------------
 **_Solution_**: First notice that, $a \oplus b = ab = e^{ln(a)+ln(b)}$  
 1. For $a \in F = \mathbb{R}_{>0}, \ \ \ \exists \ 0_F \in F \ \text{s.t.}$  
     $a \oplus 0_F = a0_F = a \implies 0_F = 1_{\mathbb{R}}$  
     Similarly,
     For $a \in F = \mathbb{R}_{>0}, \ \ \ \exists \ 1_F \in F \ \text{s.t.}$  
     $a \odot 1_F = e^{ln(a)ln(1_F)} = a \implies 1_F = e$  
-
-2. 
 
 
 
@@ -54,8 +50,6 @@ $$ a \odot b = e^{ln(a)ln(b)}$$
 4.  $(-1_F)v = -v$
 
 
-
-------------------------------------------------------------------------------------------
 **_Solution_**:
 1. $a0_V = a(0_V + 0_V) = a0_V + a0_V$  
    $a0_V + (-a0_V) = a0_V + a0_V + (-a0_V)$  
