@@ -16,70 +16,281 @@ $\alpha_1p(s) + \alpha_2q(s) = \sum_{i=0}^{n-1} (\alpha_1a_i + \alpha_2b_i)s^i$
 $\frac{d}{ds}(\alpha_1p(s) + \alpha_2q(s)) = \sum_{i=0}^{n-1} (\alpha_1a_i + \alpha_2b_i)is^{i-1} = \alpha_1\sum_{i=0}^{n-1} a_is^{i-1} + \alpha_2\sum_{i=0}^{n-1} b_is^{i-1} = \alpha_1\frac{dp}{ds} + \alpha_2\frac{dq}{ds}$  
 $\mathcal{T}(\alpha_1p+\alpha_2q) = \frac{d}{ds}(\alpha_1p+\alpha_2q) = \alpha_1\frac{dp}{ds} + \alpha_2\frac{dq}{ds} = \alpha_1\mathcal{T}(p) + \alpha_2\mathcal{T}(q) \ \blacksquare$
 
-<!-- 
-**Definition**: A linear space (or vector space) over a [[field]] $F$ is a set $V$ with two operations, addition and scalar multiplication such that the following axioms hold:
+------------------------------------------------------------------------------------------
+<ins>Example</ins>: Let $V = W = \mathbb{R^2}$. Let $\mathcal{A}$ be defined as,  
+$$\mathcal{A} = \begin{bmatrix} \alpha_1 \\ \alpha_1 + \alpha_2 \end{bmatrix} \text{where } x = \begin{bmatrix} \alpha_1 \\ \alpha_2 \end{bmatrix}$$
 
-**Vector Addition** $(+): V \times V \rightarrow V$ such that $x + y \in V$ for all $x,y \in V$.
-- (A1) $x + y = y + x$   $\forall x,y \in V$ (commutativity)  
-- (A2) $x + (y + z) = (x + y) + z$   $\forall x,y,z \in V$ (associativity)  
-- (A3) There exists an element $0 \in V$ such that $x + 0 = x$   $\forall x \in V$ (existence of additive identity)  
-- (A4) For every $x \in V$ there exist an element $-x \in V$ such that $x + (-x) = 0$   $\forall x \in V$ (existence of additive inverse)
-
-
-**Scalar Multiplication** $(\cdot): F \times V \rightarrow V$ such that $\alpha x \in V$ for all $\alpha \in F$ and $x \in V$.  
-- (M1) $\alpha (bx) = (\alpha b)x$   $\forall \alpha, \beta \in F$ and $\forall x \in V$ (associativity)  
-- (M2) $\alpha(x+y) = \alpha x + \alpha y$   $\forall \alpha \in F$ and $\forall x,y \in V$ (distributivity)  
-- (M3) $(\alpha + \beta)x = \alpha x + \beta x$   $\forall \alpha, \beta \in F$ and $\forall x \in V$ (distributivity)  
-- (M4) $1_Fx = x$   $\forall x \in V$ (existence of multiplicative identity)
-
-Elements of the vector space are called vectors, or points.
-
-Scalar multiplication in a vector space depends on the field $F$. Thus when we say $x \in V$, we mean that $x$ is a vector in the vector space $V$ over the field $F$ or $(V,F)$.  
-For example, $\mathbb{R}^n$ is a vector space over the field $\mathbb{R}$, and $\mathbb{C}^n$ is a vector space over the field $\mathbb{C}$.
-
-> Sharing the same field is a necessary condition for two vector spaces to be comparable. For example, $\mathbb{R}^n$ and $\mathbb{C}^n$ are not comparable.  
-
-> The simplest vector space contains only one point. In other words, $\{0\}$ is a vector space.
+**_Solution_**: 
+Let $a,b \in F$ and $x_1,x_2 \in X$ with $x_1 = \begin{bmatrix} \alpha_1 \\ \alpha_2 \end{bmatrix}$ and $x_2 = \begin{bmatrix} \beta_1 \\ \beta_2 \end{bmatrix}$ then,  
+$\mathcal{A}(ax_1 + bx_2) = \mathcal{A}(a\begin{bmatrix} \alpha_1 \\ \alpha_2 \end{bmatrix} + b\begin{bmatrix} \beta_1 \\ \beta_2 \end{bmatrix}) = \mathcal{A}(\begin{bmatrix} a\alpha_1 \\ a\alpha_2 \end{bmatrix} + \begin{bmatrix} b\beta_1 \\ b\beta_2 \end{bmatrix}) = \mathcal{A}(\begin{bmatrix} a\alpha_1 + b\beta_1 \\ a\alpha_2 + b\beta_2 \end{bmatrix}) = \begin{bmatrix} a\alpha_1 + b\beta_1 \\ a\alpha_1 + a\alpha_2 + b\beta_1 + b\beta_2 \end{bmatrix} = a\begin{bmatrix} \alpha_1 \\ \alpha_1 + \alpha_2 \end{bmatrix} + b\begin{bmatrix} \beta_1 \\ \beta_1 + \beta_2 \end{bmatrix} = a\mathcal{A}(x_1) + b\mathcal{A}(x_2) \ \blacksquare$
 
 ------------------------------------------------------------------------------------------
-<ins>Example</ins>: Show that $x 0_F  = 0_V$ for all $x \in V$  
-<ins>Proof:</ins>
-1. $y = x0_F = 0_V$ is assumed to be true.
-2. $x + y = x + x0_F = x1_F+ x0_F$      (M4)
-3. $x + y = x(1_F + 0_F) = x1_F$            (M3)
-4. $x + y + (-x) = x1_F + (-x1_F)$      (A4)
-5. $y = x(1_F + (-1_F)) = x0_V = 0_V$     (A2)    $\blacksquare$
-  
+<ins>Example</ins>: Let $V = W = \mathbb{R}$.    is $\  \mathcal{A}x = (1-x)$ linear or not ? 
+
+**_Solution_**: Let $a,b \in F$ and $x_1,x_2 \in X$ then,  
+
+$\begin{align  
+\notag 
+\mathcal{A}(ax_1 + bx_2) &\stackrel{?}{=} a\mathcal{A}(x_1) + b\mathcal{A}(x_2) \\
+\notag 
+1 - (ax_1 + bx_2)  & \stackrel{?}{=} a(1-x_1) + b(1-x_2) \\
+\notag 
+1 - ax_1 - bx_2  & \stackrel{?}{=} a - ax_1 + b - bx_2 \\
+\notag 
+1 & \neq a + b \ \ \forall a,b \in F  \ \blacksquare\\ 
+\notag 
+& \text{ hence not linear } \ 
+\end{align}$
+
+> Rotation transformations in $\mathbb{R}^2$ are linear transformations.  
+> Integration and differentiation are linear transformations.
+
+**Definition**: Given a linear mapping $\mathcal{T}: V \rightarrow W$, the set of all vectors $x \in V$ such that $\mathcal{T}(x) = 0_W$ is called the null space of $\mathcal{T}$ and is denoted by $N(\mathcal{T})$. That is,
+
+$$N(\mathcal{T}) := \{x \in V \ : \ \mathcal{T}(x) = 0_W\}$$
+
+**Definition**: Given a linear mapping $\mathcal{T}: V \rightarrow W$, the set of all vectors $w \in W$ such that $w = \mathcal{T}(v)$ for some $v \in V$ is called the range of $\mathcal{T}$ and is denoted by $R(\mathcal{T})$. That is,
+
+$$R(\mathcal{T}) := \{w \in W \ : \ w = \mathcal{T}(v) \ \text{for some} \ v \in V\}$$
+
+<p align="center">
+  <img rotate ="90" 
+  style="filter: invert(88.4%);"
+  src="figures/kernel-and-image.png" />
+  <!-- src="https://upload.wikimedia.org/wikipedia/commons/4/4c/KerIm_2015Joz_L2.png" /> -->
+</p>
+
 ------------------------------------------------------------------------------------------
-<ins>Example</ins>: Show that $x0_F = 0_v$  
-<ins>Proof:</ins>  
-1. Assume $y = x0_F$ and show $y = 0_V$.  
-2. $x + y = x + x0_F = x1_F + x0_F$       (M4)
-3. $x + y = x1_F + x0_F = x(1_F + 0_F)$   (M3)
-4. $x + y = x(1_F + 0_F) = x1_F$              (A3)
-5. $x + y = x1_F = x$                            (M4)
-6. $x + y + (-x) = x + (-x)$               (A4)
-7. $y = x + (-x) = 0_V$                         (A4)    $\blacksquare$
+<ins>Claim</ins>: For a given linear mapping $\mathcal{T}: V \rightarrow W$, $N(\mathcal{T})$ is a linear subspace of $V$.
 
->**Remark**: A vector space has a unique additive identity.
+**_Proof_**: Let $x_1,x_2 \in N(\mathcal{T})$ and $a \in F$ show,
 
+(S1). $x_1 + x_2 \in N(\mathcal{T})$  
+(S2). $ax_1 \in N(\mathcal{T})$
 
-### Function Space ###  
-**Definition**: Let $S$ be a set and $F$ be a field. The set of all functions from $S$ to $F$ is denoted by $F^S$.
-
-For $f,g \in F^S$, the sum $f+g \in F^S$ is the function defined by  
-
-$$(f+g)(x) = f(x) + g(x), \ \forall x \in S$$
-
-For $f \in F^S$ and $\alpha \in F$, the product $\alpha f \in F^S$ is the function defined by
-
-$$(\alpha f)(x) = \alpha f(x), \ \forall x \in S$$  
+1- $\mathcal{T}(x_1 + x_2) = \mathcal{T}(x_1) + \mathcal{T}(x_2) = 0_W + 0_W = 0_W \implies x_1 + x_2 \in N(\mathcal{T})$  
+2- $\mathcal{T}(ax_1) = a\mathcal{T}(x_1) = a0_W = 0_W \implies ax_1 \in N(\mathcal{T}) \ \blacksquare$
 
 ------------------------------------------------------------------------------------------
-<ins>Example</ins>: Set of all [[polynomials]] with degree n with coefficients in $F$ is denoted by $F[x]_n$.
+<ins>Claim</ins>: For a given linear mapping $\mathcal{T}: V \rightarrow W$, $R(\mathcal{T})$ is a subspace of $W$.
+
+**_Proof_**: Let $x_1,x_2 \in R(\mathcal{T})$ and $a \in F$ show,
+
+(S1). $x_1 + x_2 \in R(\mathcal{T})$  
+(S2). $ax_1 \in R(\mathcal{T})$
 
 
-> What essentially function spaces are, is that they are the set of all functions from a set to a field. For example, the set of all polynomials with degree n with coefficients in $F$ is denoted by $F[x]_n$. -->
+> **Definition**: A linear transformation $\mathcal{T}: V \rightarrow W$ is called one-to-one if $x_1 \neq x_2$ implies $\mathcal{T}(x_1) \neq \mathcal{T}(x_2)$ for all $x_1,x_2 \in V$.
+
+
+------------------------------------------------------------------------------------------
+<ins>Theorem</ins>: Let $\mathcal{T}: V \rightarrow W$ be a linear transformation. Then mapping $\mathcal{T}$ is one-to-one if and only if $N(\mathcal{T}) = \{0_V\}$.  
+
+**_Proof_**: We will prove the statement by contrapositive. Since it is an if and only if statement, we will prove both directions.  
+
+(Bacward direction) Assume that $N(\mathcal{T}) = \{0_V\}$ and $\mathcal{T}(x_1) = \mathcal{T}(x_2)$ for some $x_1,x_2 \in V$. Then,  
+$\mathcal{T}(x_1) - \mathcal{T}(x_2) = 0_W$  
+$\mathcal{T}(x_1 - x_2) = 0_W$  
+$x_1 - x_2 \in N(\mathcal{T})$  
+$x_1 - x_2 = 0_V$  
+$x_1 = x_2$  
+$\mathcal{T}$ is one-to-one.  
+
+(Forward direction) Assume that $\mathcal{T}$ is one-to-one and $x \in N(\mathcal{T})$. Then,  
+$\mathcal{T}(x) = 0_W$  
+$\mathcal{T}(0_V) = 0_W$  
+$x = 0_V$  
+$N(\mathcal{T}) = \{0_V\}$ $\blacksquare$
+
+**_Definition_**: A linear transformation $\mathcal{T}: V \rightarrow W$ is called onto if $R(\mathcal{T}) = W$, otherwise if $R(\mathcal{T}) \subset W$ then $\mathcal{T}$ is called into.
+
+------------------------------------------------------------------------------------------
+<ins>Example</ins>:  Let $V := \{f:[0, 1] \rightarrow \mathbb{R} \text{ and  f is integrable} \}$. A transformation $\mathcal{A}: V \rightarrow \mathbb{R}$ is defined as,  
+$$\mathcal{A}(f(s)) = \int_{0}^{1} f(s)ds \\
+\text{is $\mathcal{A} $ one-to-one ?}$$
+
+**_Solution_**: Integration operation resulting in one-to-one transformation probably not true. Hence we can exploit the fact that the integration might result in zero.
+
+Let $f(s) = 2s-1 then,  
+
+$\mathcal{A}(f(s)) = \int_{0}^{1} (2s-1)ds = \left[s^2-s\right]_{0}^{1} = 0$  
+$\mathcal{A}(f(s)) = 0$  
+Then $\mathcal{A}(0) = 0_w$ and $\mathcal{A}(f(s)) = 0_w$ for some $f(s) \neq 0$.  
+$\mathcal{A}$ is not one-to-one.
+
+moreover, 
+
+Let $f(s) = a then,
+
+$\mathcal{A}(f(s)) = \int_{0}^{1} a ds = \left[as\right]_{0}^{1} = a$  
+Shows that $\mathcal{A}$ is onto.
+
+###### Linear Transformations ######
+## Matrix Representations ##
+
+**Definition**: Let $\mathcal{T}: V \rightarrow W$ be a linear transformation with $dim(V) = n$ and $dim(W) = m$. Let $\mathcal{B} = \{v_1,v_2,...,v_n\}$ be a basis for $V$ and $\mathcal{C} = \{w_1,w_2,...,w_m\}$ be a basis for $W$. Then, the matrix representation of $\mathcal{T}$ with respect to $\mathcal{B}$ and $\mathcal{C}$ is the $m \times n$ matrix $A$ such that,  
+
+$$ [w]_c = \begin{bmatrix} w_1 \\ w_2 \\ \vdots \\ w_m \end{bmatrix} [v]_b = \begin{bmatrix} v_1 \\ v_2 \\ \vdots \\ v_n \end{bmatrix} $$  
+
+$$ [\mathcal{T}]_{\mathcal{B}}^{\mathcal{C}} = \begin{bmatrix} a_{11} & a_{12} & \cdots & a_{1n} \\ a_{21} & a_{22} & \cdots & a_{2n} \\ \vdots & \vdots & \ddots & \vdots \\ a_{m1} & a_{m2} & \cdots & a_{mn} \end{bmatrix} $$  
+$$ \mathcal{T}(v_j) = \sum_{i=1}^{m} a_{ij}w_i \ \text{for} \ j = 1,2,...,n$$
+
+
+> **_Remark_**: The matrix representation of $\mathcal{T}$ with respect to $\mathcal{B}$ and $\mathcal{C}$ is denoted by $[\mathcal{T}]_{\mathcal{B}}^{\mathcal{C}}$.
+
+Now we have a transformation represented as,
+
+$$ [w]_c = [\mathcal{T}]_{\mathcal{B}}^{\mathcal{C}} [v]_b $$
+
+
+### A formal procedure to obtain the matrix representation of a linear transformation ###
+1. Take each basis vector $v_j$ in $\mathcal{B}$
+2. Apply $\mathcal{A}$ to $v_j$ : $\mathcal{A}(v_j)$
+3. Express the result in terms of the basis vectors in $\mathcal{C}$ : $\mathcal{A}(v_j) = \sum_{i=1}^{m} a_{ij}w_i$
+4. The $j$th column of $[\mathcal{A}]_{\mathcal{B}}^{\mathcal{C}}$ is the vector $\begin{bmatrix} a_{1j} \\ a_{2j} \\ \vdots \\ a_{mj} \end{bmatrix}$ 
+
+
+------------------------------------------------------------------------------------------
+<ins>Example</ins>:  $V = \{Polynomials \ of \ degree \ less \ than \ 3\}$ and $W = \{Polynomials \ of \ degree \ less \ than \ 2\}$  
+Let $\mathcal{A}: V \rightarrow W$ be defined as,  
+$$\mathcal{A}(p(s)) = \frac{dp(s)}{ds}$$  
+Find the matrix representation of $\mathcal{A}$ with respect to the bases $\mathcal{B} = \{1, 1+s, 1+s+s^2, 1+s+s^2+s^3\}$ and $\mathcal{C} = \{1, 1+s, 1+s+s^2\}$.
+
+**_Solution_**: $[w]_c = \begin{bmatrix} w_1 \\ w_2 \\ w_3 \end{bmatrix} \ \text{and} \ [v]_b = \begin{bmatrix} v_1 \\ v_2 \\ v_3 \\ v_4 \end{bmatrix}$
+$\begin{align} \mathcal{A}(v_1) &= \frac{d}{ds}(1) = 0 = 0w_1 + 0w_2 + 0w_3 \\ \mathcal{A}(v_2) &= \frac{d}{ds}(1+s) = 1 = 1w_1 + 0w_2 + 0w_3 \\\mathcal{A}(v_3) &= \frac{d}{ds}(1+s+s^2) = 1+2s = -1w_1 + 2w_2 + 0w_3 \\\mathcal{A}(v_4) &= \frac{d}{ds}(1+s+s^2+s^3) = 1+2s+3s^2 = -1w_1 -1w_2 + 3w_3 \\\end{align}$
+
+$$ [\mathcal{A}]_{\mathcal{B}}^{\mathcal{C}} = \begin{bmatrix} 0 & 1 & -1 & -1 \\ 0 & 0 & 2 & -1 \\ 0 & 0 & 0 & 3 \end{bmatrix} $$
+
+The full matrix representation of $\mathcal{A}$ is,
+
+$$ [\mathcal{A}]_{\mathcal{B}}^{\mathcal{C}} = \begin{bmatrix} 0 & 1 & -1 & -1 \\ 0 & 0 & 2 & -1 \\ 0 & 0 & 0 & 3 \end{bmatrix} \begin{bmatrix} 1 & 1 & 1 & 1 \\ 0 & 1 & 1 & 1 \\ 0 & 0 & 1 & 1 \end{bmatrix} = \begin{bmatrix} 0 & 1 & 0 & 0 \\ 0 & 0 & 2 & 1 \\ 0 & 0 & 0 & 3 \end{bmatrix} $$
+
+------------------------------------------------------------------------------------------
+<ins>Example</ins>:  Let $V = \mathbb{R}^2$ and $\mathcal{A}: V \rightarrow V$ be defined as,
+$$\mathcal{A}(x) = \begin{bmatrix} 0 & 1 \\ -1 & 0 \end{bmatrix}x + x \begin{bmatrix} 0 & -1 \\ 1 & 0 \end{bmatrix}$$  
+Find the matrix representation of $\mathcal{A}$ with respect to the bases   
+
+$\mathcal{B} = \{\begin {bmatrix} 1 & 0 \\ 0 & 0 \end{bmatrix}, \begin {bmatrix} 0 & 1 \\ 0 & 0 \end{bmatrix}, \begin {bmatrix} 0 & 0 \\ 1 & 0 \end{bmatrix}, \begin {bmatrix} 0 & 0 \\ 0 & 1 \end{bmatrix}\}$. and  
+
+$\mathcal{C} = \{\begin {bmatrix} 1 & 0 \\ 0 & 0 \end{bmatrix}, \begin {bmatrix} 1 & 1 \\ 0 & 0 \end{bmatrix}, \begin {bmatrix} 1 & 1 \\ 1 & 0 \end{bmatrix}, \begin {bmatrix} 1 & 1 \\ 1 & 1 \end{bmatrix}\}$.
+
+**_Solution_**: $[w]_c = \begin{bmatrix} w_1 \\ w_2 \\ w_3 \\ w_4 \end{bmatrix} \ \text{and} \ [v]_b = \begin{bmatrix} v_1 \\ v_2 \\ v_3 \\ v_4 \end{bmatrix}$
+
+
+$\begin{align}
+\notag 
+\mathcal{A}(v_1) &= \begin{bmatrix} 0 & 1 \\ -1 & 0 \end{bmatrix} \begin{bmatrix} 1 & 0 \\ 0 & 0 \end{bmatrix} + \begin{bmatrix} 1 & 0 \\ 0 & 0 \end{bmatrix} \begin{bmatrix} 0 & -1 \\ 1 & 0 \end{bmatrix} = \begin{bmatrix} 0 & 0 \\ -1 & 0 \end{bmatrix} + \begin{bmatrix} 0 & -1 \\ 0 & 0 \end{bmatrix} = \begin{bmatrix} 0 & -1 \\ -1 & 0 \end{bmatrix} = 1w_1 +0w_2 -1w_3 +0w_4 \\
+\notag 
+\mathcal{A}(v_2) &= \begin{bmatrix} 0 & 1 \\ -1 & 0 \end{bmatrix} \begin{bmatrix} 0 & 1 \\ 0 & 0 \end{bmatrix} + \begin{bmatrix} 0 & 1 \\ 0 & 0 \end{bmatrix} \begin{bmatrix} 0 & -1 \\ 1 & 0 \end{bmatrix} = \begin{bmatrix} 0 & 0 \\ 0 & -1 \end{bmatrix} + \begin{bmatrix} 0 & -1 \\ 0 & 0 \end{bmatrix} = \begin{bmatrix} 1 & 0 \\ 0 & -1 \end{bmatrix} = 1w_1 +0w_2 +1w_3 -1w_4 \\
+\notag 
+\mathcal{A}(v_3) &= \begin{bmatrix} 0 & 1 \\ -1 & 0 \end{bmatrix} \begin{bmatrix} 0 & 0 \\ 1 & 0 \end{bmatrix} + \begin{bmatrix} 0 & 0 \\ 1 & 0 \end{bmatrix} \begin{bmatrix} 0 & -1 \\ 1 & 0 \end{bmatrix} = \begin{bmatrix} 0 & 0 \\ 0 & -1 \end{bmatrix} + \begin{bmatrix} 0 & 0 \\ 1 & 0 \end{bmatrix} = \begin{bmatrix} 1 & 0 \\ 0 & -1 \end{bmatrix} = 1w_1 +0w_2 +1w_3 -1w_4 \\
+\notag 
+\mathcal{A}(v_4) &= \begin{bmatrix} 0 & 1 \\ -1 & 0 \end{bmatrix} \begin{bmatrix} 0 & 0 \\ 0 & 1 \end{bmatrix} + \begin{bmatrix} 0 & 0 \\ 0 & 1 \end{bmatrix} \begin{bmatrix} 0 & -1 \\ 1 & 0 \end{bmatrix} = \begin{bmatrix} 0 & 0 \\ -1 & 0 \end{bmatrix} + \begin{bmatrix} 0 & -1 \\ 0 & 0 \end{bmatrix} = \begin{bmatrix} 0 & 1 \\ 1 & 0 \end{bmatrix} = -1w_1 +0w_2 +1w_3 +0w_4 \\
+\end{align}$
+
+$$ [\mathcal{A}]_{\mathcal{B}}^{\mathcal{C}} = \begin{bmatrix} 1 & 1 & 1 & -1 \\ 0 & 0 & 0 & 0 \\ -1 & 1 & 1 & 1 \\ 0 & -1 & -1 & 0 \end{bmatrix} $$
+
+###### Linear Transformations ######
+## Change of Basis ##
+
+**Definition**: Let $\mathcal{B} = \{v_1,v_2,...,v_n\}$ and $\mathcal{C} = \{w_1,w_2,...,w_n\}$ be two bases for a linear space $V$. The change of basis matrix from $\mathcal{B}$ to $\mathcal{C}$ is the $n \times n$ matrix $P$ such that, 
+
+$$ [w]_C = A [v]_B $$
+$$ [w]_C = \bar{A} [v]_{\bar{B}} $$
+
+We know that a change of basis is a linear transformation. Hence,
+
+$$ [v]_B =  P [v]_{\bar{B}} $$  
+$$ [w]_C = A P [v]_{\bar{B}} $$
+
+in codomain perspective,
+
+$$ [w]_C =  Q [w]_{\bar{C}} $$  
+$$ [w]_{\bar{C}} = Q^{-1}A [v]_{B} $$
+$$ [w]_{\bar{C}} = Q^{-1}A P [v]_{\bar{B}} $$
+
+------------------------------------------------------------------------------------------
+<ins>Example</ins>:
+$\begin{align}
+\notag
+V &= \{ \text{Polynomials with degree less than 3} \} \\
+\notag
+W &= \{ \text{Polynomials with degree less than 2} \} \\
+\notag
+\mathcal{B} &= \{1, 1+s, 1+s+s^2, 1+s+s^2+s^3\} \\
+\notag
+\mathcal{C} &= \{1, 1+s, 1+s+s^2\} \\
+\notag
+A &= \begin{bmatrix} 0 & 1 & -1 & -1 \\ 0 & 0 & 2 & -1 \\ 0 & 0 & 0 & 3 \end{bmatrix} \\
+\notag
+\bar{B} &= \{1,s,s^2,s^3\} \\
+\end{align}$
+
+**_Solution_**: First we will find the change of basis in the domain matrix from $\mathcal{B}$ to $\mathcal{\bar{B}}$. That is more clearly stated as,  
+
+$$ [w]_C =  \bar{A} [v]_{\bar{B}} $$
+
+and given $[v]_B =  P [v]_{\bar{B}}$, $\bar{A}$ is equal to,
+
+$$ [w]_C = A P [v]_{\bar{B}} $$
+
+
+In order to find $P$ we need to write the basis vectors in $\mathcal{\bar{B}}$ in terms of $\mathcal{B}$.   
+$\begin{align}
+\notag
+1 &= 1(1) + 0(1+s) + 0(1+s+s^2) + 0(1+s+s^2+s^3) \\
+\notag
+s &= -1(1) + 1(1+s) + 0(1+s+s^2) + 0(1+s+s^2+s^3) \\
+\notag
+s^2 &= 0(1) + -1(1+s) + 1(1+s+s^2) + 0(1+s+s^2+s^3) \\
+\notag
+s^3 &= 0(1) + 0(1+s) + -1(1+s+s^2) + 1(1+s+s^2+s^3) \\
+\end{align}$
+
+$$ P = \begin{bmatrix} 1 & -1 & 0 & 0 \\ 0 & 1 & -1 & 0 \\ 0 & 0 & 1 & -1 \\ 0 & 0 & 0 & 1 \end{bmatrix} $$
+
+now $\bar{A}$ is equal to,
+
+$$ \bar{A} = A P = \begin{bmatrix} 0 & 1 & -1 & -1 \\ 0 & 0 & 2 & -1 \\ 0 & 0 & 0 & 3 \end{bmatrix} \begin{bmatrix} 1 & -1 & 0 & 0 \\ 0 & 1 & -1 & 0 \\ 0 & 0 & 1 & -1 \\ 0 & 0 & 0 & 1 \end{bmatrix} = \begin{bmatrix} 0 & 1 & -2 & 0 \\ 0 & 0 & 2 & -3 \\ 0 & 0 & 0 & 3 \end{bmatrix} $$
+
+Now we will change the basis in the codomain to canonical basis while keeping the basis of the domain as also in canonical form. That is,
+
+$$ [w]_{\bar{C}} = Q^{-1} A P [v]_{\bar{B}} $$
+$$ [w]_C = Q [w]_{\bar{C}} $$
+$$ [w]_{\bar{C}} = Q^{-1} [w]_C $$
+
+In order to find $Q^{-1}$ in a single step, we can write the basis vectors in $\mathcal{C}$ in terms of $\mathcal{\bar{C}}$.
+
+$\begin{align}
+\notag
+1 &= 1(1) + 0(s) + 0(s^2) \\
+\notag
+1+s &= 1(1) + 1(s) + 0(s^2) \\
+\notag
+1+s+s^2 &= 1(1) + 1(s) + 1(s^2) \\
+\end{align}$
+
+$$ Q^{-1} = \begin{bmatrix} 1 & 1 & 1 \\ 0 & 1 & 1 \\ 0 & 0 & 1 \end{bmatrix} $$
+
+as the final steps,  
+
+$$ [w]_{\bar{C}} = Q^{-1} \bar{A} [v]_{\bar{B}} $$
+$$ Q^{-1} \bar{A} = \begin{bmatrix} 1 & 1 & 1 \\ 0 & 1 & 1 \\ 0 & 0 & 1 \end{bmatrix} \begin{bmatrix} 0 & 1 & -2 & 0 \\ 0 & 0 & 2 & -3 \\ 0 & 0 & 0 & 3 \end{bmatrix} = \begin{bmatrix} 0 & 1 & 0 & 0 \\ 0 & 0 & 2 & 0 \\ 0 & 0 & 0 & 3 \end{bmatrix} $$
+$$ [w]_{\bar{C}} = \begin{bmatrix} 0 & 1 & 0 & 0 \\ 0 & 0 & 2 & 0 \\ 0 & 0 & 0 & 3 \end{bmatrix} [v]_{\bar{B}} $$
+
+
+Given the matrix representation of a linear transformation $\mathcal{A}:V \rightarrow W$ with respect to bases $\mathcal{B}$ and $\mathcal{C}$, one can draw the following diagram.
+
+```mermaid
+graph LR
+A[<b>Matrix Representation</b>] --> B[<b>Change of Basis</b>]
+B --> C[<b>Matrix Representation</b>]
+C --> D[<b>Change of Basis</b>]
+D --> E[<b>Matrix Representation</b>]
+```
+
+
+
 
 ------------------------------------------------------------------------------------------
 #EE501 - [[Linear Systems Theory]] at [[METU]]
