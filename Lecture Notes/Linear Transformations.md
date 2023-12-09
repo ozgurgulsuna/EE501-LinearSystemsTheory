@@ -270,27 +270,26 @@ Given the matrix representation of a linear transformation $\mathcal{A}:V \right
 flowchart LR
 
 
-B & A --> C
+B["[v]_b"] & A["[v]_b*"] -.- C{"v"}
 
-B --> F
+B --[A]--> F
 
-C --> D
-D --> C
+C --A--> D{"w"}
+D --A'--> C
 
-D --> E & F
+D -.- E["[w]_c*"] & F["[w]_c"]
 
-A --> E 
-
-
-A --> B
-B --> A
+A --[Q`AP]--> E 
 
 
-E --> F
-F --> E
+A <--[P]--> B
+
+E <--[Q]--> F
 
 
 ```
+
+
 
 
 
