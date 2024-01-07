@@ -106,5 +106,81 @@ $$P = \begin{bmatrix} 1/2 & 0 & 1/2 \\ 0 & 1 & 0 \\ 1/2 & 0 & 1/2 \end{bmatrix}$
 
 $$P \begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix} = \begin{bmatrix} 1/2 \\ 0 \\ 1/2 \end{bmatrix}$$
 
+## Solution of Linear Equations ##
+
+Consider the linear equation expressed as
+
+$$Ax = b \text{ where } A \in \mathbb{C}^{m \times n}, x \in \mathbb{C}^n, b \in \mathbb{C}^m$$
+
+If $m = n$, then the equation has a unique solution. If $m < n$, then the equation has infinitely many solutions. If $m > n$, then the equation has no solution.
+
+> - A solution exists if and only if $b \in \text{range}(A)$.  
+> - A solution is unique if and only if $A$ is full rank, or equivalently, $A$ has linearly independent columns, or $N(A) = \{0\}$.
+
+-----------------------------------------------------------------------------------
+
+<ins>Example:</ins> Let $A = \begin{bmatrix} 1 \\ 1 \\ 1 \\ 1 \end{bmatrix}$ and $b = \begin{bmatrix} 2.2 \\ 1.9 \\ 2.1 \\ 1.8 \end{bmatrix}$. Find $x$ such that $Ax = b$.
+
+_<ins>Solution:</ins>_ 
+
+$$ b \in^{?} \text{range}(A)$$
+
+$$\text{range}(A) = \text{span}\{[1,1,1,1]^T\}$$
+
+$$\text{span}\{[1,1,1,1]^T\} = \{[a,a,a,a]^T \mid a \in \mathbb{R}\}$$
+
+$$b \notin \text{range}(A)$$
+
+Therefore, there is no exact solution. We need to find the best approximation of $b$ in $\text{range}(A)$.
+
+Lets call this best approximation $b^*$. Then, $b^* = \alpha \begin{bmatrix} 1 \\ 1 \\ 1 \\ 1 \end{bmatrix}$ and $\|Ax-b^*\|^2$ is minimum.
+
+$$B = \begin{bmatrix} 1 \\ 1 \\ 1 \\ 1 \end{bmatrix}$$
+
+$$P = \begin{bmatrix} 1 \\ 1 \\ 1 \\ 1 \end{bmatrix} \begin{bmatrix} 4 \end{bmatrix}^{-1} \begin{bmatrix} 1 & 1 & 1 & 1 \end{bmatrix}$$
+
+$$Pb = \begin{bmatrix} 1 \\ 1 \\ 1 \\ 1 \end{bmatrix} \begin{bmatrix} 4 \end{bmatrix}^{-1} \begin{bmatrix} 1 & 1 & 1 & 1 \end{bmatrix} \begin{bmatrix} 2.2 \\ 1.9 \\ 2.1 \\ 1.8 \end{bmatrix}$$
+
+$$Pb = b^* = \begin{bmatrix} 2.0 \\ 2.0 \\ 2.0 \\ 2.0 \end{bmatrix}$$
+
+-----------------------------------------------------------------------------------
+
+<ins>Example:</ins> Let $A = \begin{bmatrix} 2 & 1 \\ 2 & 1 \\ 2 & 1 \\ 2 & 1 \end{bmatrix}$ and $b = \begin{bmatrix} l_1 \\ l_2 \\ l_3 \\ l_4 \end{bmatrix}$. Find $x$ such that $Ax = b$.
+
+_<ins>Solution:</ins>_ Now, the rows of $A$ are linearly dependent. Therefore, $A$ is not full rank. Therefore, there is no exact solution. We need to find the best approximation of $b$ in $\text{range}(A)$.
+
+$$b^* = \begin{bmatrix} \bar l \\ \bar l \\ \bar l \\ \bar l \end{bmatrix} \text{ where } \bar l = \frac{l_1+l_2+l_3+l_4}{4}$$
+
+$$\begin{bmatrix} 2 & 1 \\ 2 & 1 \\ 2 & 1 \\ 2 & 1 \end{bmatrix} \begin{bmatrix} x_1 \\ x_2 \end{bmatrix} = \begin{bmatrix}\bar l \\ \bar l \\ \bar l \\ \bar l \end{bmatrix}$$
+
+$$\begin{bmatrix} x_1 \\ x_2 \end{bmatrix} = \begin{bmatrix} \bar l \\ - \bar l \end{bmatrix} \text{ is any solution, more examples } \begin{bmatrix} 1 \\ -1 \end{bmatrix}, \begin{bmatrix} 2 \\ -3 \end{bmatrix}, \begin{bmatrix} 3 \\ -5 \end{bmatrix}, \ldots$$
+
+$$\text{A minimum norm solution is can be found by minimizing the norm of $x$.}$$
+
+$$\text{ For that, we can project any solution onto the null space perpendicular to $A$.}$$
+
+$$x_1 = \text{Proj}_{N(A)^{\perp}} \begin{bmatrix} \bar l \\ - \bar l \end{bmatrix}$$
+
+$$\text{Corollary: } N(A)^{\perp} = \text{range}(A^*)$$
+
+$$A^* = \begin{bmatrix} 2 & 2 & 2 & 2 \\ 1 & 1 & 1 & 1 \end{bmatrix}$$
+
+$$\text{range}(A^*) = \text{span}\bigg \{\begin{bmatrix} 2 \\ 1 \end{bmatrix}\bigg\}$$
+
+$$\text{Proj}_{N(A)^{\perp}} \begin{bmatrix} \bar l \\ - \bar l \end{bmatrix} = \text{Proj}_{\text{range}(A^*)} \begin{bmatrix} \bar l \\ - \bar l \end{bmatrix}$$
+
+$$\text{Proj}_{\text{range}(A^*)} \begin{bmatrix} \bar l \\ - \bar l \end{bmatrix} = \frac{<\begin{bmatrix} \bar l \\ - \bar l \end{bmatrix}, \begin{bmatrix} 2 \\ 1 \end{bmatrix}>}{<\begin{bmatrix} 2 \\ 1 \end{bmatrix}, \begin{bmatrix} 2 \\ 1 \end{bmatrix}>} \begin{bmatrix} 2 \\ 1 \end{bmatrix}$$
+
+$$\text{Proj}_{\text{range}(A^*)} \begin{bmatrix} \bar l \\ - \bar l \end{bmatrix} = \frac{\bar l}{5} \begin{bmatrix} 2 \\ 1 \end{bmatrix}$$
+
+$$\text{ Or in projection matrix form, } Q = \begin{bmatrix} 2 \\ 1 \end{bmatrix} \text{ then, } P = Q(Q^*Q)^{-1}Q^*$$
+
+$$P = \begin{bmatrix} 2 \\ 1 \end{bmatrix} \frac{1}{5}  \begin{bmatrix} 2 & 1 \end{bmatrix} = \begin{bmatrix} 4/5 & 2/5 \\ 2/5 & 1/5 \end{bmatrix}$$
+
+$$x_1 = Px = \begin{bmatrix} 4/5 & 2/5 \\ 2/5 & 1/5 \end{bmatrix} \begin{bmatrix} \bar l \\ - \bar l \end{bmatrix} = \begin{bmatrix} 4/5 \bar l - 2/5 \bar l \\ 2/5 \bar l - 1/5 \bar l \end{bmatrix} = \begin{bmatrix} 2/5 \bar l \\ 1/5 \bar l \end{bmatrix} = \bar l/ 5 \begin{bmatrix} 2 \\ 1 \end{bmatrix}$$
+
+
+
+
 -----
 #EE501 - [[Linear Systems Theory]] at [[METU]]
