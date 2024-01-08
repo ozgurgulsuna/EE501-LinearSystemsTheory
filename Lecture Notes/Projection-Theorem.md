@@ -179,7 +179,128 @@ $$P = \begin{bmatrix} 2 \\ 1 \end{bmatrix} \frac{1}{5}  \begin{bmatrix} 2 & 1 \e
 
 $$x_1 = Px = \begin{bmatrix} 4/5 & 2/5 \\ 2/5 & 1/5 \end{bmatrix} \begin{bmatrix} \bar l \\ - \bar l \end{bmatrix} = \begin{bmatrix} 4/5 \bar l - 2/5 \bar l \\ 2/5 \bar l - 1/5 \bar l \end{bmatrix} = \begin{bmatrix} 2/5 \bar l \\ 1/5 \bar l \end{bmatrix} = \bar l/ 5 \begin{bmatrix} 2 \\ 1 \end{bmatrix}$$
 
+-----------------------------------------------------------------------------------
 
+## Special Cases of $Ax = b$ ##
+
+### 1.1 Columns of $A$ are linearly independent ###
+If the columns of $A$ are linearly independent, then $A$ is full rank and $A^TA$ is invertible. Therefore, $x = (A^TA)^{-1}A^Tb$ is the unique solution.
+
+$A$ is full column rank  with $A$ is $m \times n$ and $m \geq n$ if and only if $N(A) = \{0\}$. (Tall matrix)
+
+If $b \in \text{range}(A)$, then the solution exists and is unique. If $b \notin \text{R}(A)$, then the solution does not exist.
+
+$Ax = \text{Proj}_{\text{R}(A)}b$ is the best approximation of $b$ in $\text{R}(A)$.
+
+$P = A(A^TA)^{-1}A^T$ is the projection matrix onto $\text{R}(A)$.
+
+$Ax = A(A^TA)^{-1}A^Tb$ is the best approximation of $b$ in $\text{R}(A)$.
+
+$Ax - A(A^TA)^{-1}A^Tb = 0$ since the projection of $b$ onto $\text{R}(A)$.
+
+$A(x - (A^TA)^{-1}A^Tb) = 0$ 
+
+$x - (A^TA)^{-1}A^Tb \in N(A)$ and the null space contains only the zero vector.
+
+$x = (A^TA)^{-1}A^Tb$ is the unique solution.
+
+### 1.2 Columns of $A$ are linearly dependent ###
+
+If the columns of $A$ are linearly dependent, then $A$ is not full rank and $A^TA$ is not invertible. Therefore, $x = (A^TA)^{-1}A^Tb$ is not the unique solution.
+
+### 2.1 Rows of $A$ are linearly independent ###
+
+If the rows of $A$ are linearly independent, then $A$ is full row rank and $AA^T$ is invertible. Therefore, $x = A^T(AA^T)^{-1}b$ is the unique solution.
+
+$A$ is full row rank  with $A$ is $m \times n$ and $m \leq n$ if and only if $N(A^T) = \{0\}$. (Wide matrix)
+
+If $b \in \text{range}(A)$, then the solution exists and is unique. If $b \notin \text{R}(A)$, then the solution does not exist.
+
+$\text{dim}(\text{R}(A)) = \text{dim}(\text{R}(A^T)) = \text{rank}(A) = \text{rank}(A^T) \implies b \in \text{R}(A)$
+
+For a minimum norm solution, we need to project $b$ onto the null space perpendicular to $A$.
+
+$x = \text{Proj}_{N(A)^{\perp}}b = \text{Proj}_{\text{R}(A^*)}b$
+
+$P = A^*(AA^*)^{-1}A = A^*(A^*A)^{-1}A$
+
+$Px = A^*(AA^*)^{-1}Ax = A^*(AA^*)^{-1}b$
+
+### 2.2 Rows of $A$ are linearly dependent ###
+If the rows of $A$ are linearly dependent, then $A$ is not full row rank and $AA^T$ is not invertible. Therefore, $x = A^T(AA^T)^{-1}b$ is not the unique solution.
+
+### 3.1 $A$ is square and invertible ###
+
+If $A$ is square and invertible, then $x = A^{-1}b$ is the unique solution.
+
+-----------------------------------------------------------------------------------
+
+<ins>Example:</ins> Let $A = \begin{bmatrix} 1 & 1 & 1 \\ 1 & 2 & 3 \\ 3 & 2 & 1 \end{bmatrix}$ and $b = \begin{bmatrix} 1 \\ 2 \\ -1 \end{bmatrix}$. Find $x$ such that $Ax = b$.
+
+_<ins>Solution:</ins>_
+
+First, we need to check if $b \in \text{range}(A)$. Since $A$ has linearly dependent columns
+
+$$\text{range}(A) = \text{span}\bigg\{\begin{bmatrix} 1 \\ 1 \\ 3 \end{bmatrix}, \begin{bmatrix} 1 \\ 3 \\ 1 \end{bmatrix}\bigg\}$$
+
+$$\text{dim}(\text{range}(A)) = \text{rank}(A) = 2$$
+
+$$\text{dim}(N(A)) = n - \text{rank}(A) = 3 - 2 = 1$$
+
+$$N(A) = \text{span}\bigg\{\begin{bmatrix} 1 \\ 2 \\ -1 \end{bmatrix}\bigg\}$$
+
+$$b \notin \text{range}(A)$$
+
+Therefore, there is no exact solution. We need to find the best approximation of $b$ in $\text{range}(A)$.
+
+$$B = \begin{bmatrix} 1 & 1 \\ 1 & 3 \\ 3 & 1 \end{bmatrix}$$
+
+$$P = B(B^TB)^{-1}B^T$$
+
+$$P = \begin{bmatrix} 1 & 1 \\ 1 & 3 \\ 3 & 1 \end{bmatrix} \begin{bmatrix} 11 & 7 \\ 7 & 11 \end{bmatrix}^{-1} \begin{bmatrix} 1 & 1 & 3 \\ 1 & 3 & 1 \end{bmatrix}$$
+
+$$P = \frac{1}{72} \begin{bmatrix} 1 & 1 \\ 1 & 3 \\ 3 & 1 \end{bmatrix} \begin{bmatrix} 11 & -7 \\ -7 & 11 \end{bmatrix} \begin{bmatrix} 1 & 1 & 3 \\ 1 & 3 & 1 \end{bmatrix}$$
+
+$$P = \frac{1}{72} \begin{bmatrix} 1 & 1 \\ 1 & 3 \\ 3 & 1 \end{bmatrix} \begin{bmatrix} 4 & -10 & 26 \\ 4 & 26 & -10 \end{bmatrix}$$
+
+$$P = \frac{1}{72} \begin{bmatrix} 8 & 16 & 16 \\ 16 & 68 & -4 \\ 16 & -4 & 68 \end{bmatrix}$$
+
+$$Pb = \frac{1}{72} \begin{bmatrix} 8 & 16 & 16 \\ 16 & 68 & -4 \\ 16 & -4 & 68 \end{bmatrix} \begin{bmatrix} 1 \\ 2 \\ -1 \end{bmatrix} = \begin{bmatrix} 1/3 \\ 13/6 \\ -5/6 \end{bmatrix}$$
+
+$$b^* = Pb = \begin{bmatrix} 1/3 \\ 13/6 \\ -5/6 \end{bmatrix}$$
+
+Now, the problem has a solution. 
+However for the uniqueness, we need to check if $A$ is full row rank. Since $A$ has linearly dependent rows, $A$ is not full row rank. Therefore, the solution is not unique, hence we need to find the minimum norm solution. For that, we need to project $b$ onto the null space perpendicular to $A$.
+
+Starting with any solution $x$,
+
+$$x = \begin{bmatrix} x_1 \\ x_2 \\ x_3 \end{bmatrix}$$
+
+$$\text{Let } x_1 = 0 $$
+
+$$\begin{bmatrix} 1 & 1 & 1 \\ 1 & 2 & 3 \\ 3 & 2 & 1 \end{bmatrix} \begin{bmatrix} 0 \\x_2 \\ x_3 \end{bmatrix} = \begin{bmatrix} 1/3 \\ 13/6 \\ -5/6 \end{bmatrix}$$
+
+$$x_2 = \frac{-7}{6} \text{ and } x_3 = \frac{9}{6}$$
+
+$$x = \begin{bmatrix} 0 \\ -7/6 \\ 9/6 \end{bmatrix}$$
+
+$$\text{Now, $x_{min}$ is the projection of $x$ onto the null space perpendicular to $A$.}$$
+
+$$x_{min} = \text{Proj}_{N(A)^{\perp}}x = \text{Proj}_{\text{R}(A^*)}x$$
+
+$$A^* = \begin{bmatrix} 1 & 1 & 3 \\ 1 & 2 & 2 \\ 1 & 3 & 1 \end{bmatrix}$$
+
+$$\text{range}(A^*) = \text{span}\bigg\{\begin{bmatrix} 1 \\ 1 \\ 1 \end{bmatrix}, \begin{bmatrix} 1 \\ 2 \\ 3 \end{bmatrix}\bigg\}$$
+
+$$Q = \begin{bmatrix} 1 & 1 \\ 1 & 2 \\ 1 & 3 \end{bmatrix}$$
+
+$$P = Q(Q^*Q)^{-1}Q^*$$
+
+$$P = \begin{bmatrix} 1 & 1 \\ 1 & 2 \\ 1 & 3 \end{bmatrix} \begin{bmatrix} 3 & 6 \\ 6 & 14 \end{bmatrix}^{-1} \begin{bmatrix} 1 & 1 & 1 \\ 1 & 2 & 3 \end{bmatrix}$$
+
+$$P = \frac{1}{6} \begin{bmatrix} 5 & 2 & -1 \\ 2 & 2 & 2 \\ -1 & 2 & 5 \end{bmatrix}$$
+
+$$x_{min} = Px = \frac{1}{6} \begin{bmatrix} 5 & 2 & -1 \\ 2 & 2 & 2 \\ -1 & 2 & 5 \end{bmatrix} \begin{bmatrix} 0 \\ -7/6 \\ 9/6 \end{bmatrix} = \begin{bmatrix} -25/36 \\ 4/36 \\ 31/36 \end{bmatrix}$$
 
 
 -----
