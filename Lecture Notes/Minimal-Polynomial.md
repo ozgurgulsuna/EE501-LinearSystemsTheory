@@ -120,10 +120,12 @@ $$m(s) = (s-\lambda_1)^{m_1} \cdots (s-\lambda_k)^{m_k}$$
 
 $$1 \leq m_i \leq r_i $$
 
-$\bar A = \begin{bmatrix} \bar A_1 & 0 & \cdots & 0 \\ 0 & \bar A_2 & \cdots & 0 \\ \vdots & \vdots & \ddots & \vdots \\ 0 & 0 & \cdots & \bar A_k \end{bmatrix}$ $\bar A = B^{-1}AB$  where B is composed of the basis vectors for $N(A-\lambda_iI)^{m_i}$
+$\bar A = \begin{bmatrix} \bar A_1 & 0 & \cdots & 0 \\ 0 & \bar A_2 & \cdots & 0 \\ \vdots & \vdots & \ddots & \vdots \\ 0 & 0 & \cdots & \bar A_k \end{bmatrix}$ $\Large \substack{ \bar A = B^{-1}AB \text{,  B is composed of the basis vectors} \\ B = \begin{bmatrix} e_1 & e_2 & \cdots & e_n \end{bmatrix} \text{  for the  } N(A-\lambda_iI)^{m_i} }$
 
 Size of $\bar A_i$ is $\text{dim} \bigg ( N(A-\lambda_iI)^{m_i} \bigg )$
 
+--------------------------------------------------------------------------------------------------------------
+<ins>Example:</ins> $A = \begin{bmatrix} 1 & 0 & 0 & 0 \\ 0 & 1 & 1 & 0 \\ 0 & 0 & 1 & 0 \\ 0 & 0 & 0 & 2 \end{bmatrix}$ $\Large \substack{d(s) = (s-1)^3(s-2) \\ m(s) = (s-1)^2(s-2)}$
 
 --------------------------------------------------------------------------------------------------------------
 #EE501 - [[Linear Systems Theory]] at [[METU]]
