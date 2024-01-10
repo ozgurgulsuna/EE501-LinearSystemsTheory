@@ -57,6 +57,72 @@ $ A^{100} = \frac{3^{100} - 1}{2} A + \frac{-3^{100} + 3}{2} I $
 --------------------------------------------------------------------------------------------------------------
 ## Minimal Polynomial ##
 
+**Definition:** The monic polynomial is the polynomial with the highest degree coefficient equal to 1.
+
+$ s^n + a_1s^{n-1} + \cdots \rightarrow $ monic
+
+$ 2s^n + a_1s^{n-1} + \cdots \rightarrow $ not monic
+
+
+**Definition:** The minimal polynomial of a matrix is the monic polynomial of the lowest degree that has the matrix as a root.
+
+$$m(A) = 0_{n \times n}$$
+
+**Theorem:** Given a matrix $A = \mathbb{C}^{n \ times n}$, let m(s) be its minimal polynomial. Then, the minimal polynomial is the smallest degree polynomial that satisfies the following:
+
+<center>i) m(s) is unique. </center>
+
+<center>ii) m(s) divides d(s) with no remainder. </center>
+
+$$ \exists q(s)  \text{ s.t. } d(s) = q(s)m(s) $$
+
+<center>iii) Every root of m(s) is a root of d(s). </center>
+
+
+--------------------------------------------------------------------------------------------------------------
+<ins>Example:</ins> $A = \begin{bmatrix} 1 & 0 & 0 \\ 0 & 2 & 0 \\ 0 & 0 & 3 \end{bmatrix}$ $\Large \substack{d(s) = (s-1)(s-2)(s-3) \\ m(s) = (s-1)(s-2)(s-3)}$
+
+> Remark: When A has distinct eigenvalues (which implies [diagonalizability](https://en.wikipedia.org/wiki/Diagonalizable_matrix) but converse is not true), the minimal polynomial is the same as the characteristic polynomial.
+
+--------------------------------------------------------------------------------------------------------------
+<ins>Example:</ins> $A_1 = \begin{bmatrix} 1 & 0 & 0 \\ 0 & 2 & 0 \\ 0 & 0 & 2 \end{bmatrix}$ $\Large \substack{d(s) = (s-1)(s-2)^2 \\ m(s) = (s-1)(s-2)} \ \ \ \ \ \ \  \normalsize A_2 = \begin{bmatrix} 1 & 0 & 0 \\ 0 & 2 & 1 \\ 0 & 0 & 2 \end{bmatrix}$ $\Large \substack{d(s) = (s-1)(s-2)^2 \\ m(s) = (s-1)(s-2)^2}$
+
+A way to check if a minimal polynomial is correct is to check if the characteristic polynomial is zero when the minimal polynomial is substituted for s.
+
+Let $m_1(s) = (s-1)(s-2)$ then $m_1(A) = (A-1I)(A-2I) = \begin{bmatrix} 0 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{bmatrix} \begin{bmatrix} -1 & 0 & 0 \\ 0 & 0 & 0 \\ 0 & 0 & 0 \end{bmatrix} = \begin{bmatrix} 0 & 0 & 0 \\ 0 & 0 & 0 \\ 0 & 0 & 0 \end{bmatrix} \checkmark$
+
+Let $m_2(s) = (s-1)(s-2)$ then $m_2(A) = (A-1I)(A-2I) = \begin{bmatrix} 0 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{bmatrix} \begin{bmatrix} -1 & 0 & 0 \\ 0 & 0 & 1 \\ 0 & 0 & 0 \end{bmatrix} = \begin{bmatrix} 0 & 0 & 0 \\ 0 & 0 & 1 \\ 0 & 0 & 0 \end{bmatrix} \neq 0 $
+
+Then, $m_2(s) = (s-1)(s-2)^2 \implies m_2(A) = (A-1I)(A-2I)^2 = \begin{bmatrix} 0 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{bmatrix} \begin{bmatrix} -1 & 0 & 0 \\ 0 & 0 & 1 \\ 0 & 0 & 0 \end{bmatrix} \begin{bmatrix} -1 & 0 & 0 \\ 0 & 0 & 1 \\ 0 & 0 & 0 \end{bmatrix} = \begin{bmatrix} 0 & 0 & 0 \\ 0 & 0 & 0 \\ 0 & 0 & 0 \end{bmatrix} \checkmark$
+
+$ \mathbb{R}^3 = N(A-1I) \oplus N((A-2I)^2) $ where,
+
+$ N(A-1I) = N \bigg ( \begin{bmatrix} 0 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{bmatrix} \bigg ) = \text{span} \bigg \{ \begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix} \bigg \} \ \ \text{dim} \bigg ( N(A-1I) \bigg ) = 1$
+
+$ N((A-2I)^2) = N \bigg ( \begin{bmatrix} 1 & 0 & 0 \\ 0 & 0 & 0 \\ 0 & 0 & 0 \end{bmatrix} \bigg ) = \text{span} \bigg \{ \begin{bmatrix} 0 \\ 1 \\ 0 \end{bmatrix}, \begin{bmatrix} 0 \\ 0 \\ 1 \end{bmatrix} \bigg \} \ \ \text{dim} \bigg ( N((A-2I)^2) \bigg ) = 2$
+
+
+> Remark: There is a relationship between decomposition form and minimal polynomial in terms of power.
+>
+>$$ m(s) = (s-\lambda_1)^{d_1} \cdots (s-\lambda_k)^{d_k} $$
+>
+>$$ \mathbb{R}^n = N(A-\lambda_1I)^{d_1} \oplus \cdots \oplus N(A-\lambda_kI)^{d_k} $$
+
+**Theorem:**
+
+$$\mathbb{C}^n = N(A-\lambda_1I)^{m_1} \oplus N(A-\lambda_2I)^{m_2} \oplus \cdots \oplus N(A-\lambda_kI)^{m_k}$$
+
+$$d(s) = (s-\lambda_1)^{r_1} \cdots (s-\lambda_k)^{r_k}$$
+
+$$r_1 + r_2 + \cdots + r_k = n$$
+
+$$m(s) = (s-\lambda_1)^{m_1} \cdots (s-\lambda_k)^{m_k}$$
+
+$$1 \leq m_i \leq r_i $$
+
+$\bar A = \begin{bmatrix} \bar A_1 & 0 & \cdots & 0 \\ 0 & \bar A_2 & \cdots & 0 \\ \vdots & \vdots & \ddots & \vdots \\ 0 & 0 & \cdots & \bar A_k \end{bmatrix}$ $\bar A = B^{-1}AB$  where B is composed of the basis vectors for $N(A-\lambda_iI)^{m_i}$
+
+Size of $\bar A_i$ is $\text{dim} \bigg ( N(A-\lambda_iI)^{m_i} \bigg )$
 
 
 --------------------------------------------------------------------------------------------------------------
