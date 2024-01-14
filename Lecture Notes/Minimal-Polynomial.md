@@ -127,5 +127,196 @@ Size of $\bar A_i$ is $\text{dim} \bigg ( N(A-\lambda_iI)^{m_i} \bigg )$
 --------------------------------------------------------------------------------------------------------------
 <ins>Example:</ins> $A = \begin{bmatrix} 1 & 0 & 0 & 0 \\ 0 & 1 & 1 & 0 \\ 0 & 0 & 1 & 0 \\ 0 & 0 & 0 & 2 \end{bmatrix}$ $\Large \substack{d(s) = (s-1)^3(s-2) \\ m(s) = (s-1)^2(s-2)}$
 
+<ins>Solution:</ins> Let $\Sigma_1$ be $A-\lambda_1I$ and $\Sigma_2$ be $A-\lambda_2I$.
+
+$\Sigma_1 = \begin{bmatrix} 0 & 0 & 0 & 0 \\ 0 & 0 & 1 & 0 \\ 0 & 0 & 0 & 0 \\ 0 & 0 & 0 & 1 \end{bmatrix} \text{dim} \bigg ( N(\Sigma_1) \bigg ) = 2 \neq 3 = r_1  \rightarrow \text{dim}{V} - \text{dim}{R(\Sigma_1)}= 4 - 2 = 2$
+
+Then we need to check the dimension of $N(\Sigma_1^2)$.
+
+$\Sigma_1^2 = \begin{bmatrix} 0 & 0 & 0 & 0 \\ 0 & 0 & 1 & 0 \\ 0 & 0 & 0 & 0 \\ 0 & 0 & 0 & 1 \end{bmatrix} \begin{bmatrix} 0 & 0 & 0 & 0 \\ 0 & 0 & 1 & 0 \\ 0 & 0 & 0 & 0 \\ 0 & 0 & 0 & 1 \end{bmatrix} = \begin{bmatrix} 0 & 0 & 0 & 0 \\ 0 & 0 & 0 & 0 \\ 0 & 0 & 0 & 0 \\ 0 & 0 & 0 & 1 \end{bmatrix}  \text{dim} \bigg ( N(\Sigma_1^2) \bigg ) = 1 = r_1  \rightarrow \text{dim}{V} - \text{dim}{R(\Sigma_1^2)} = 4 - 1 = 3 = r_1$
+
+Lets briefly check the dimension of $N(\Sigma_1^3)$.
+
+$\Sigma_1^3 = \begin{bmatrix} 0 & 0 & 0 & 0 \\ 0 & 0 & 0 & 0 \\ 0 & 0 & 0 & 0 \\ 0 & 0 & 0 & 1 \end{bmatrix} \text{dim} \bigg ( N(\Sigma_1^3) \bigg ) = 3 = r_1  \rightarrow \text{dim}{V} - \text{dim}{R(\Sigma_1^3)} = 4 - 1 = 3 = r_1$
+
+$ \ \ \ \ \ \ \ \  \ \ \ \ \ \ \ \ \ \ \ \ \ \ \vdots$
+
+$\Sigma_1^4 = \begin{bmatrix} 0 & 0 & 0 & 0 \\ 0 & 0 & 0 & 0 \\ 0 & 0 & 0 & 0 \\ 0 & 0 & 0 & 1 \end{bmatrix} \text{dim} \bigg ( N(\Sigma_1^4) \bigg ) = 3 = r_1  \rightarrow \text{dim}{V} - \text{dim}{R(\Sigma_1^4)} = 4 - 1 = 3 = r_1$
+
+Lets check the second eigenvalue.
+
+
+$\Sigma_2 = \begin{bmatrix} -1 & 0 & 0 & 0 \\ 0 & -1 & 1 & 0 \\ 0 & 0 & -1 & 0 \\ 0 & 0 & 0 & 0 \end{bmatrix} = \begin{bmatrix} 1 & 0 & 0 & 0 \\ 0 & 1 & -1 & 0 \\ 0 & 0 & 1 & 0 \\ 0 & 0 & 0 & 0 \end{bmatrix} \text{dim} \bigg ( N(\Sigma_2) \bigg ) = 1 = r_2  \rightarrow \text{dim}{V} - \text{dim}{R(\Sigma_2)} = 4 - 3 = 1$
+
+Then the minimal polynomial is $m(s) = (s-1)^2(s-2)$.
+
+--------------------------------------------------------------------------------------------------------------
+<ins>Example:</ins> $A = \begin{bmatrix} 1 & 1 & 0 & 0 \\ 0 & 1 & 1 & 0 \\ 0 & 0 & 1 & 0 \\ 0 & 0 & 0 & 2 \end{bmatrix}$ $\Large \substack{d(s) = (s-1)^3(s-2) \\ m(s) = (s-1)^3(s-2)}$
+
+<ins>Solution:</ins> Let $\Sigma_1$ be $A-\lambda_1I$ and $\Sigma_2$ be $A-\lambda_2I$.
+
+$\Sigma_1 = \begin{bmatrix} 0 & 1 & 0 & 0 \\ 0 & 0 & 1 & 0 \\ 0 & 0 & 0 & 0 \\ 0 & 0 & 0 & 1 \end{bmatrix} \text{dim} \bigg ( N(\Sigma_1) \bigg ) = 1 \neq r_1  \rightarrow \text{dim}{V} - \text{dim}{R(\Sigma_1)} = 4 - 3 = 1$
+
+Then we need to check the dimension of $N(\Sigma_1^2)$.
+
+$\Sigma_1^2 = \begin{bmatrix} 0 & 0 & 1 & 0 \\ 0 & 0 & 0 & 0 \\ 0 & 0 & 0 & 0 \\ 0 & 0 & 0 & 1 \end{bmatrix} \text{dim} \bigg ( N(\Sigma_1^2) \bigg ) = 2 \neq r_1  \rightarrow \text{dim}{V}- \text{dim}{R(\Sigma_1^2)} = 4 - 2 = 2$
+
+Check the dimension of $N(\Sigma_1^3)$.
+
+$\Sigma_1^3 = \begin{bmatrix} 0 & 0 & 0 & 0 \\ 0 & 0 & 0 & 0 \\ 0 & 0 & 0 & 0 \\ 0 & 0 & 0 & 1 \end{bmatrix} \text{dim} \bigg ( N(\Sigma_1^3) \bigg ) = 3 = r_1  \rightarrow \text{dim}{V} - \text{dim}{R(\Sigma_1^3)}= 4 - 1 = 3$
+
+Now we can check the second eigenvalue.
+
+$\Sigma_2 = \begin{bmatrix} -1 & 1 & 0 & 0 \\ 0 & -1 & 1 & 0 \\ 0 & 0 & -1 & 0 \\ 0 & 0 & 0 & 0 \end{bmatrix} = \begin{bmatrix} 1 & -1 & 0 & 0 \\ 0 & 1 & -1 & 0 \\ 0 & 0 & 1 & 0 \\ 0 & 0 & 0 & 0 \end{bmatrix} \text{dim} \bigg ( N(\Sigma_2) \bigg ) = 1 = r_2  \rightarrow \text{dim}{V} - \text{dim}{R(\Sigma_2)} = 4 - 3 = 1$
+
+Then the minimal polynomial is $m(s) = (s-1)^3(s-2)$.
+
+--------------------------------------------------------------------------------------------------------------
+<ins>Example:</ins> $A = \begin{bmatrix} 2 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\ 0 & 2 & 1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\ 0 & 0 & 2 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\ 0 & 0 & 0 & 2 & 1 & 0 & 0 & 0 & 0 & 0 \\ 0 & 0 & 0 & 0 & 2 & 0 & 0 & 0 & 0 & 0 \\ 0 & 0 & 0 & 0 & 0 & 2 & 0 & 0 & 0 & 0 \\ 0 & 0 & 0 & 0 & 0 & 0 & 2 & 0 & 0 & 0 \\ 0 & 0 & 0 & 0 & 0 & 0 & 0 & 3 & 1 & 0 \\ 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 3 & 0 \\ 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 3 \end{bmatrix}$ $\Large \substack{d(s) = (s-2)^7(s-3)^3 \\ m(s) = ?}$
+
+<ins>Solution:</ins> For each jordan block, we need to check the dimension of $N(\Sigma_1^i)$.
+
+The largest jordan block will have the largest dimension of $N(\Sigma_1^i)$. The rest of the jordan blocks will have dimension of $N(\Sigma_1^i)$ equal to the size of the jordan block. Hence the geometric multiplicity wont increase.
+
+Let $\Sigma_1$ be $A-\lambda_1I$ and $\Sigma_2$ be $A-\lambda_2I$. Check the largest jordan block.
+
+$\Sigma_1 = \begin{bmatrix} 0 & 1 & 0 \\ 0 & 0 & 1 \\ 0 & 0 & 0 \end{bmatrix} \text{dim} \bigg ( N(\Sigma_1) \bigg ) = 1 \neq r_1  \rightarrow \text{dim}{V} - \text{dim}{R(\Sigma_1)} = 3 - 2 = 1$
+
+Then we need to check the dimension of $N(\Sigma_1^2)$.
+
+$\Sigma_1^2 = \begin{bmatrix} 0 & 0 & 1 \\ 0 & 0 & 0 \\ 0 & 0 & 0 \end{bmatrix} \text{dim} \bigg ( N(\Sigma_1^2) \bigg ) = 2 \neq r_1  \rightarrow \text{dim}{V}- \text{dim}{R(\Sigma_1^2)} = 3 - 1 = 2$
+
+Check the dimension of $N(\Sigma_1^3)$.
+
+$\Sigma_1^3 = \begin{bmatrix} 0 & 0 & 0 \\ 0 & 0 & 0 \\ 0 & 0 & 0 \end{bmatrix} \text{dim} \bigg ( N(\Sigma_1^3) \bigg ) = 3 = r_1  \rightarrow \text{dim}{V} - \text{dim}{R(\Sigma_1^3)} = 3 - 0 = 3$
+
+We need to continue to see that further powers of $\Sigma_1$ will not increase the dimension of $N(\Sigma_1^i)$.
+
+$\Sigma_1^4 = \begin{bmatrix} 0 & 0 & 0 \\ 0 & 0 & 0 \\ 0 & 0 & 0 \end{bmatrix} \text{dim} \bigg ( N(\Sigma_1^4) \bigg ) = 3 = r_1  \rightarrow \text{dim}{V} - \text{dim}{R(\Sigma_1^4)} = 3 - 0 = 3$
+
+This implies that the further jordan blocks will not increase the dimension of $N(\Sigma_1^i)$. Hence they are not needed to be checked for minimal polynomial.
+
+Now we can check the second eigenvalue.
+
+$\Sigma_2 = \begin{bmatrix} 0 & -2 \\ 0 & 0 \end{bmatrix} \text{dim} \bigg ( N(\Sigma_2) \bigg ) = 1 \neq r_2  \rightarrow \text{dim}{V} - \text{dim}{R(\Sigma_2)} = 2 - 1 = 1$
+
+$\Sigma_2^2 = \begin{bmatrix} 0 & 0 \\ 0 & 0 \end{bmatrix} \text{dim} \bigg ( N(\Sigma_2^2) \bigg ) = 2 = r_2  \rightarrow \text{dim}{V} - \text{dim}{R(\Sigma_2^2)} = 2 - 0 = 2$
+
+Then the minimal polynomial is $m(s) = (s-2)^7(s-3)^2$.
+
+
+> Remark: 
+> $$\text{dim} \bigg ( N(A-\lambda_iI) \bigg ) = \text{\# of jordan blocks corresponding to } \lambda_i \text{ with size $\geq$ 1}$$
+> $$ \text{dim} \bigg ( N(A-\lambda_iI)^2 \bigg ) - \text{dim} \bigg ( N(A-\lambda_iI) \bigg ) = \text{\# of jordan blocks corresponding to } \lambda_i \text{ with size $\geq$ 2}$$
+> $$ \text{dim} \bigg ( N(A-\lambda_iI)^3 \bigg ) - \text{dim} \bigg ( N(A-\lambda_iI)^2 \bigg ) = \text{\# of jordan blocks corresponding to } \lambda_i \text{ with size $\geq$ 3}$$
+> $$ \text{dim} \bigg ( N(A-\lambda_iI)^k \bigg ) - \text{dim} \bigg ( N(A-\lambda_iI)^{k-1} \bigg ) = \text{\# of jordan blocks corresponding to } \lambda_i \text{ with size $\geq$ k}$$
+
+
+<ins>Example:</ins> $A \in \mathbb{R}^4$ Which has a single eigenvalue $\lambda_1 = 7$ and the geometric multiplicity is 2. Find all possible jordan forms.
+
+<ins>Solution:</ins> The characteristic polynomial is $d(s) = (s-7)^4$ and the minimal polynomial is $m(s) = (s-7)^2$. This suggests that,
+
+$\text{dim} \bigg ( N(A-7I)^2 \bigg ) = 4 = r_1  \rightarrow \text{dim}(V) = \text{dim} \bigg ( N(A-7I)^2 \bigg ) $
+
+Then for the $\text{dim}\bigg (N(A-7I)\bigg )$ we have 3 possibilities, 1, 2, or 3.
+
+$ \text{a) Let } \text{dim} N(A-7I) = 3$
+
+$ \ \ \ \ \ \text{\# of jordan blocks } = 3$
+
+$ \ \ \ \ \ \text{\# of jordan blocks w/ size } \geq 2 = 4 - 3 = 1$
+
+$ \ \ \ \ \ \text{\# of jordan blocks w/ size } \geq 3 = 3 - 3 = 0$
+
+$A = \begin{bmatrix} 7 & 1 & 0 & 0 \\ 0 & 7 & 0 & 0 \\ 0 & 0 & 7 & 0 \\ 0 & 0 & 0 & 7 \end{bmatrix}$
+
+$ \text{a) Let } \text{dim} N(A-7I) = 2$
+
+$ \ \ \ \ \ \text{\# of jordan blocks } = 2$
+
+$ \ \ \ \ \ \text{\# of jordan blocks w/ size } \geq 2 = 4 - 2 = 2$
+
+$ \ \ \ \ \ \text{\# of jordan blocks w/ size } \geq 3 = \text{dim}\bigg ( N(A-7I)^3 \bigg ) - \text{ dim}\bigg ( N(A-7I)^2 \bigg ) = 4 - 4 = 0$ 
+
+$A = \begin{bmatrix} 7 & 1 & 0 & 0 \\ 0 & 7 & 0 & 0 \\ 0 & 0 & 7 & 1 \\ 0 & 0 & 0 & 7 \end{bmatrix}$
+
+$ \text{a) Let } \text{dim} N(A-7I) = 1$
+
+$ \ \ \ \ \ \text{\# of jordan blocks } = 1$
+
+$ \ \ \ \ \ \text{\# of jordan blocks w/ size } \geq 2 = 4 - 1 = 3$ 
+
+However, this is not possible since there cannot be 3 jordan blocks with size greater than or equal to 2.
+
+--------------------------------------------------------------------------------------------------------------
+<ins>Example:</ins> Suppose a matrix $A \in \mathbb{R}^{8\times 8}$ has the following subspace dimensions:
+
+$$ \text{dim} \bigg ( N(A-3I) \bigg ) = 5 \\
+\text{dim} \bigg ( N(A-3I)^2 \bigg ) = 7 \\
+\text{dim} \bigg ( N(A-3I)^3 \bigg ) = 8 $$
+
+a) Find the characteristic polynomial of A.
+
+b) Find the minimal polynomial of A.
+
+c) Find the possible Jordan forms of A.
+
+<ins>Solution:</ins> 
+
+a) We know that the characteristic polynomial is $d(s) = (s-3)^8$.
+
+b) We know that the minimal polynomial is $m(s) = (s-3)^3$ since the dimension of $N(A-3I)^3$ is same as the dimension of the vector space. This implies that the geometric multiplicity is 3. 
+
+c) Starting from the largest jordan block, having geometric multiplicity 3 suggest that the largest jordan block has size 3.
+
+$ \text{dim} \bigg ( N(A-3I)^3 \bigg ) - \text{dim} \bigg ( N(A-3I)^2 \bigg ) = \text{\# of jordan blocks corresponding to } \lambda_1 \text{ with size }\geq 3 = 8 - 7 = 1$
+
+$ \text{dim} \bigg ( N(A-3I)^2 \bigg ) - \text{dim} \bigg ( N(A-3I) \bigg ) = \text{\# of jordan blocks corresponding to } \lambda_1 \text{ with size }\geq 2 = 7 - 5 = 2$
+
+We have 2 that are greater than or equal to 2. This implies that we have 1 jordan block with size 3 and 1 jordan blocks with size 2.
+
+$ \text{dim} \bigg ( N(A-3I) \bigg ) = \text{\# of jordan blocks corresponding to } \lambda_1 \text{ with size }\geq 1 = 5$
+
+This implies that we have 3 jordan blocks with size 1.
+
+$A = \begin{bmatrix}3 & 1 & 0 & 0 & 0 & 0 & 0 & 0 \\ 0 & 3 & 1 & 0 & 0 & 0 & 0 & 0 \\ 0 & 0 & 3 & 0 & 0 & 0 & 0 & 0 \\ 0 & 0 & 0 & 3 & 1 & 0 & 0 & 0 \\ 0 & 0 & 0 & 0 & 3 & 1 & 0 & 0 \\ 0 & 0 & 0 & 0 & 0 & 3 & 0 & 0 \\ 0 & 0 & 0 & 0 & 0 & 0 & 3 & 1 \\ 0 & 0 & 0 & 0 & 0 & 0 & 0 & 3 \end{bmatrix}$
+
+
+<!-- $\left[
+  \begin{matrix}
+    1 & 2 & 3 \\
+    1 & 2 & 3 \\
+    1 & 2 & 3 \\
+    1 & 2 & 3 \\
+  \end{matrix}
+  \left|
+    \,
+    \begin{matrix}
+      4  \\
+      4  \\
+      4  \\
+      4  \\
+    \end{matrix}
+  \right.
+\right]$ -->
+
+--------------------------------------------------------------------------------------------------------------
+
+$ A \in \mathbb{C}^{n \times n} \\
+\bar A = J = B^{-1}AB \\
+\mathbb{C}^n = N(A-\lambda_1I)^{m_1} \oplus \cdots \oplus N(A-\lambda_kI)^{m_k} \\
+\ \ \ \ \ \ \text{We look for basis vectors for } N((A - \lambda_iI)^{m_i}) \\
+B = \begin{bmatrix} B_1 & B_2 & \cdots & B_n \end{bmatrix} \\
+B_i = \begin{bmatrix} b_i^2 & b_i^3 & \cdots & b_i^{r_i} \end{bmatrix} \text{ where } b_i, \cdots, b_i^{r_i} \text{ have to be basis vectors for } N((A-\lambda_iI)^{m_i})$
+
+$A = \begin{bmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 2 \end{bmatrix} \\
+
+
+
+
+> Remark: Let $A$ be an $n \times n$ matrix and $\bar A$ be its Jordan canonical form.
+> $$ \bar A = B^{-1}AB \text{,  where $B$ is invertible and composed of the basis vectors for the } N(A-\lambda_iI)^{m_i} $$ 
+> $$ \text{rank}(A) = \text{rank}(B A) = \text{rank}( A B) = \text{rank}(\bar A)$$
+
 --------------------------------------------------------------------------------------------------------------
 #EE501 - [[Linear Systems Theory]] at [[METU]]
