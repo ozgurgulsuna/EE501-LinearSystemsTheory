@@ -301,22 +301,4 @@ $A = \begin{bmatrix}3 & 1 & 0 & 0 & 0 & 0 & 0 & 0 \\ 0 & 3 & 1 & 0 & 0 & 0 & 0 &
 \right]$ -->
 
 --------------------------------------------------------------------------------------------------------------
-
-$ A \in \mathbb{C}^{n \times n} \\
-\bar A = J = B^{-1}AB \\
-\mathbb{C}^n = N(A-\lambda_1I)^{m_1} \oplus \cdots \oplus N(A-\lambda_kI)^{m_k} \\
-\ \ \ \ \ \ \text{We look for basis vectors for } N((A - \lambda_iI)^{m_i}) \\
-B = \begin{bmatrix} B_1 & B_2 & \cdots & B_n \end{bmatrix} \\
-B_i = \begin{bmatrix} b_i^2 & b_i^3 & \cdots & b_i^{r_i} \end{bmatrix} \text{ where } b_i, \cdots, b_i^{r_i} \text{ have to be basis vectors for } N((A-\lambda_iI)^{m_i})$
-
-$A = \begin{bmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 2 \end{bmatrix} \\
-
-
-
-
-> Remark: Let $A$ be an $n \times n$ matrix and $\bar A$ be its Jordan canonical form.
-> $$ \bar A = B^{-1}AB \text{,  where $B$ is invertible and composed of the basis vectors for the } N(A-\lambda_iI)^{m_i} $$ 
-> $$ \text{rank}(A) = \text{rank}(B A) = \text{rank}( A B) = \text{rank}(\bar A)$$
-
---------------------------------------------------------------------------------------------------------------
 #EE501 - [[Linear Systems Theory]] at [[METU]]
