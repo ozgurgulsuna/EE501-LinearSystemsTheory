@@ -118,7 +118,139 @@ $ A P = P \bar A  \implies \begin{bmatrix} 1 & 1 & -1 \\ -1 & 3 & 2 \\ 0 & 0 & 1
 
 --------------------------------------------------------------------------------------------------------------
 
-### Special Case 1. ###
+### Special Case I ###
+***$A$ has a single eigenvalue $\lambda_i$ and $ m_i = r_i $***
+
+```
+ ┌─────────────────────────┬──────┬───────┬──────┐
+ │ N(Σᵢ)        - Σᵢᵐ⁻¹x   │      │ ..... │      │
+ ├─────────────────────────┘      │       │      │
+ │ N(Σᵢ²)          - Σᵢᵐ⁻²x       │       │      │
+ ├────────────────────────────────┘..     │      │
+ │ .                                  ..  │      │
+ ├────────────────────────────────────────┘      │
+ │ N(Σᵢᵐᶦ)                   - x                 │
+ └───────────────────────────────────────────────┘
+```
+
+For this case, we can see that $m(s) = d(s)$ , which means that the Jordan canonical form will have a single block for $\lambda$ , and the size of the block will be $m_i = r_i$ . This is because the minimal polynomial is the product of the linear factors of the characteristic polynomial, and the characteristic polynomial is the product of the eigenvalues. Since there is only one eigenvalue, the minimal polynomial will be the same as the characteristic polynomial.
+
+$ \bar A = J = \begin{bmatrix} \lambda & 1 & 0 & \cdots & 0 \\ 0 & \lambda & 1 & \cdots & 0 \\ \vdots & \vdots & \vdots & \ddots & \vdots \\ 0 & 0 & 0 & \cdots & \lambda \end{bmatrix} $
+
+_consider the case:_ $\Big \{ \Sigma_i^{m_i-1}x, \Sigma_i^{m_i-2}x, \cdots, \Sigma_ix, x \Big \}$ where it is sufficient to span $N(\Sigma_i^{m_i})$ , which is the same as $N(\Sigma_i^{m_i-1})$ , which is the same as $N(\Sigma_i^{m_i-2})$ , and so on. There are $r_i$ vectors in this chain, which is the same as the dimension of $N(\Sigma_i^{m_i})$ .
+
+--------------------------------------------------------------------------------------------------------------
+
+### Special Case II ###
+***$A$ has a single eigenvalue $\lambda_i$ and $ m_i = 1***
+
+```
+ ┌───────────────────────────────────────────────┐
+ │ N(Σᵢ)           - x₃                          │
+ │                      - x₂                     │
+ │                           - x₁                │
+ └───────────────────────────────────────────────┘
+```
+
+For this case, we can see that $m(s) = (s-\lambda_i)$ , which means that the Jordan canonical form will have a single block for $\lambda$ , and the size of the block will be $m_i = 1$ . This is because the minimal polynomial is the product of the linear factors of the characteristic polynomial, and the characteristic polynomial is the product of the eigenvalues. Since there is only one eigenvalue, the minimal polynomial will be the same as the characteristic polynomial. The number of chains will be equal to the dimension of $N(\Sigma_i)$, which is $r_i$.
+
+$ \text{dim }N(\Sigma_i) = r_i $
+
+$ \text{chain }1 = \Big \{ x_1 \Big \} \\
+\text{chain }2 = \Big \{ x_2 \Big \} \\
+\ \ \ \ \ \ \ \ \ \ \ \vdots \\
+\text{chain }r_i = \Big \{ x_{r_i} \Big \} $
+
+$ J = \begin{bmatrix} \lambda & 0 & 0 & \cdots & 0 \\ 0 & \lambda & 0 & \cdots & 0 \\ \vdots & \vdots & \vdots & \ddots & \vdots \\ 0 & 0 & 0 & \cdots & \lambda \end{bmatrix} $
+
+--------------------------------------------------------------------------------------------------------------
+<ins>Example</ins>: Given $m_i = 6$ and $r_i = 8$ , Find the largest K value such that $y \in N(\Sigma_i^K)$ but $y \notin N(\Sigma_i^{K-1})$
+
+```
+ ┌─────────────────────────┬──────┬───────┬──────┬──────┬───────┐
+ │ N(Σᵢ)    -Σᵢy   - Σᵢ⁵   │      │       │      │      │       │
+ ├─────────────────────────┘      │       │      │      │       │
+ │ N(Σᵢ²)      -y         - Σᵢ⁴x  │       │      │      │       │
+ ├────────────────────────────────┘       │      │      │       │
+ │ N(Σᵢ³)                         - Σᵢ³x  │      │      │       │
+ ├────────────────────────────────────────┘      │      │       │
+ │ N(Σᵢ⁴)                              - Σᵢ²x    │      │       │
+ ├───────────────────────────────────────────────┘      │       │
+ │ N(Σᵢ⁵)                                     - Σᵢx     │       │
+ ├──────────────────────────────────────────────────────┘       │
+ │ N(Σᵢ⁶)                                           - x         │
+ └──────────────────────────────────────────────────────────────┘
+ ```
+
+First chain $ \Big \{ \Sigma_i^5x, \Sigma_i^4x, \Sigma_i^3x, \Sigma_i^2x, \Sigma_ix, x \Big \} $ has $r_i$ vectors, which is the same as the dimension of $N(\Sigma_i^6)$
+
+Second chain $ \Big \{ \Sigma_i y, y \Big \} $ has 2 vectors, which is the same as the dimension of $N(\Sigma_i^1)$
+
+$ B = \begin{bmatrix} \Sigma_i^5x & \Sigma_i^4x & \Sigma_i^3x & \Sigma_i^2x & \Sigma_ix & x & \Sigma_iy & y \end{bmatrix} $
+
+$ J = \begin{bmatrix} \lambda & 1 & 0 & 0 & 0 & 0 & 0 & 0 \\ 0 & \lambda & 1 & 0 & 0 & 0 & 0 & 0 \\ 0 & 0 & \lambda & 1 & 0 & 0 & 0 & 0 \\ 0 & 0 & 0 & \lambda & 1 & 0 & 0 & 0 \\ 0 & 0 & 0 & 0 & \lambda & 1 & 0 & 0 \\ 0 & 0 & 0 & 0 & 0 & \lambda & 0 & 0 \\ 0 & 0 & 0 & 0 & 0 & 0 & \lambda & 1 \\ 0 & 0 & 0 & 0 & 0 & 0 & 0 & \lambda \end{bmatrix} $
+
+--------------------------------------------------------------------------------------------------------------
+<ins>Example</ins>: Let $A \in \mathbb{C}^{6\times 6}$ with a single eigenvalue. $m(s)=(s-\lambda_i)^3$ , $\text{dim }N(\Sigma_i) = 2$ , Find the Jordan canonical form of $A$ and construct the change of basis matrix $B$.
+
+<ins>Solution</ins>:
+
+$ d(s) = (s - \lambda_i )^6 \rightarrow \text{dim }(v) = 6 \text{ single eigenvalue } \lambda_i  $
+
+$ \text{dim }N(\Sigma_i) = 2 \implies \text{ There are 2 Jordan blocks or chains } $
+
+$ m(s) = (s-\lambda_i)^3 \implies \text{ The size of largest Jordan block is } 3 \times 3 $
+
+Then we would have 2 Jordan blocks of size 3x3. The change of basis matrix $B$ would be composed of the basis vectors.
+
+$ \bar A = J = \begin{bmatrix} \lambda & 1 & 0 & 0 & 0 & 0 \\ 0 & \lambda & 1 & 0 & 0 & 0 \\ 0 & 0 & \lambda & 0 & 0 & 0 \\ 0 & 0 & 0 & \lambda & 1 & 0 \\ 0 & 0 & 0 & 0 & \lambda & 1 \\ 0 & 0 & 0 & 0 & 0 & \lambda \end{bmatrix} $
+
+Jordan chains for $\lambda_i$ are $ \Big \{ \Sigma_i^2x, \Sigma_ix, x \Big \} $ and $ \Big \{ \Sigma_i^2y, \Sigma_iy, y \Big \} $
+
+$ B = \begin{bmatrix} \Sigma_i^2x & \Sigma_ix & x & \Sigma_i^2y & \Sigma_iy & y \end{bmatrix} $
+
+Try to find $x$ and $y$ such that $x \in N(\Sigma_i^2)$ but $x \notin N(\Sigma_i)$ and $y \in N(\Sigma_i)$
+
+ASK FOR HELP FOR NEXT
+
+--------------------------------------------------------------------------------------------------------------
+<ins>Example</ins>: Let $A = \begin{bmatrix} 1 & 1 & 0 & 0 \\ 0 & 1 & 0 & 0 \\ 0 & 0 & 1 & 0 \\ -1 & 1 & 0 & 2 \end{bmatrix}$ Find the characteristic polynomial, minimal polynomial, Jordan canonical form and the basis for $A$.
+
+<ins>Solution</ins>: 
+
+$ d(s) = \text{det}(sI - A) = (s-1)^3(s-2) $
+
+For the minimal polynomial, we need to check the null space of $A - \lambda_iI$ for each eigenvalue.
+
+$ \Sigma_1 =  \ \ A - I \ \ = \begin{bmatrix} 0 & 1 & 0 & 0 \\ 0 & 0 & 0 & 0 \\ 0 & 0 & 0 & 0 \\ -1 & 1 & 0 & 1 \end{bmatrix} 
+\text{dim }N(\Sigma_1) = 4-2 = 2 \neq r_1 $
+
+$ \Sigma_1^2 = (A - I)^2 =  \begin{bmatrix} 0 & 0 & 0 & 0 \\ 0 & 0 & 0 & 0 \\ 0 & 0 & 0 & 0 \\ -1 & 0 & 0 & 1 \end{bmatrix}
+\text{dim }N(\Sigma_1^2) = 4-1 = 3 = r_1 $
+
+$ \Sigma_2 =  \ \ A - 2I \ = \begin{bmatrix} -1 & 1 & 0 & 0 \\ 0 & -1 & 0 & 0 \\ 0 & 0 & -1 & 0 \\ -1 & 1 & 0 & 0 \end{bmatrix} 
+\text{dim }N(\Sigma_2) = 4-1 = 3 = r_2 $ 
+
+$ m(s) = (s-1)^2(s-2) $ Largest Jordan block is 2x2
+
+$ \bar A = J = \begin{bmatrix} 1 & 1 & 0 & 0 \\ 0 & 1 & 0 & 0 \\ 0 & 0 & 1 & 0 \\ 0 & 0 & 0 & 2 \end{bmatrix} $
+
+Jordan chains for $\lambda_1 = 1$ are $ \Big \{ \Sigma_1x, x \Big \} $
+
+choose $x = \begin{bmatrix} 1 \\ 1 \\ 0 \\ 1 \end{bmatrix}$
+Then $ \Big \{ \Sigma_1x, x \Big \} = \Big \{ \begin{bmatrix} 1 \\ 0 \\ 0 \\ 1 \end{bmatrix}, \begin{bmatrix} 1 \\ 1 \\ 0 \\ 1 \end{bmatrix} \Big \} $
+
+choose $y = \begin{bmatrix} 0 \\ 0 \\ 1 \\ 0 \end{bmatrix}$
+Then $ \Big \{y \Big \} = \Big \{ \begin{bmatrix} 1 \\ 0 \\ 0 \\ 0 \end{bmatrix} \Big \} $
+
+choose $z = \begin{bmatrix} 0 \\ 0 \\ 0 \\ 1 \end{bmatrix}$
+Then $ \Big \{z \Big \} = \Big \{ \begin{bmatrix} 0 \\ 0 \\ 0 \\ 1 \end{bmatrix} \Big \} $
+
+$ B = \begin{bmatrix} \Sigma_1x & x & y & z \end{bmatrix} = \begin{bmatrix} 1 & 1 & 0 & 0 \\ 0 & 1 & 0 & 0 \\ 0 & 0 & 1 & 0 \\ 1 & 1 & 0 & 1 \end{bmatrix} $
+
+--------------------------------------------------------------------------------------------------------------
+#EE501 - [[Linear Systems Theory]] at [[METU]]
+
 
 
 
