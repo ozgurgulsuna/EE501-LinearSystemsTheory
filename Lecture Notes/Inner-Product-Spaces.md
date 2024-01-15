@@ -33,13 +33,13 @@ $$|\langle x,y \rangle|^2 \leq \langle x,x \rangle \langle y,y \rangle$$
 
 **Proof**: Let $x,y \in V$ and $c \in F$.
 
-1. 
-$$ 0 & \leq \langle x-cy,x-cy \rangle \\
+1. $$\large\begin{align*} 0 & \leq \langle x-cy,x-cy \rangle \\
 & = \langle x,x \rangle - \langle x,cy \rangle - \langle cy,x \rangle + \langle cy,cy \rangle \\
 & = \langle x,x \rangle - \overline{c}\langle x,y \rangle - c\langle y,x \rangle + |c|^2\langle y,y \rangle \\
 & = \langle x,x \rangle - \overline{c}\langle x,y \rangle - c\overline{\langle x,y \rangle} + |c|^2\langle y,y \rangle \\
 & = \langle x,x \rangle - 2Re(c\langle x,y \rangle) + |c|^2\langle y,y \rangle \\
-$$
+\end{align*}$$
+
 
 
 
