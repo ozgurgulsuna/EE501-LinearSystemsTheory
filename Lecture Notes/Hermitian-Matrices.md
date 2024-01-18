@@ -72,7 +72,7 @@ $ \langle x, (A-\lambda I)^2 x \rangle  = 0$
 
 $ \langle  x, (A-\lambda I) (A-\lambda I) x \rangle  = 0$
 
-$ \langle (A-\lambda I) x, (A-\lambda I) x \rangle  = 0 = \|(A-\lambda I)x\|^2 \implies (A-\lambda I)x = 0
+$ \langle (A-\lambda I) x, (A-\lambda I) x \rangle  = 0 = \|(A-\lambda I)x\|^2 \implies (A-\lambda I)x = 0 $
 
 Then $x \in N((A-\lambda I))$.
 
@@ -94,7 +94,7 @@ where $\lambda_i$ are the distinct eigenvalues of $A$.
 **Proof**: See the lecture notes, page 50.
 
 --------------------------------------------------------------------------------------------------------------
-**Proof:** Let $A$ be Hermitian matrix with eigenvalues $\lambda_1, \lambda_2, \cdots, \lambda_{\sigma}$. Let $\lambda_min = \min_{i=1,2,\cdots,\sigma} \lambda_i$ and $\lambda_max = \max_{i=1,2,\cdots,\sigma} \lambda_i$. Then for all $x \in \mathbb{C}^n$,
+**Theorem:** Let $A$ be Hermitian matrix with eigenvalues $\lambda_1, \lambda_2, \cdots, \lambda_{\sigma}$. Let $\lambda_min = \min_{i=1,2,\cdots,\sigma} \lambda_i$ and $\lambda_max = \max_{i=1,2,\cdots,\sigma} \lambda_i$. Then for all $x \in \mathbb{C}^n$,
 
 $$ \large \lambda_{min} \langle x,x \rangle \leq \langle x,Ax \rangle \leq \lambda_{max} \langle x,x \rangle $$
 
