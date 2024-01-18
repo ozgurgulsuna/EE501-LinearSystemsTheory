@@ -147,7 +147,7 @@ $$Pb = b^* = \begin{bmatrix} 2.0 \\ 2.0 \\ 2.0 \\ 2.0 \end{bmatrix}$$
 
 <ins>Example:</ins> Let $A = \begin{bmatrix} 2 & 1 \\ 2 & 1 \\ 2 & 1 \\ 2 & 1 \end{bmatrix}$ and $b = \begin{bmatrix} l_1 \\ l_2 \\ l_3 \\ l_4 \end{bmatrix}$. Find $x$ such that $Ax = b$.
 
-_<ins>Solution:</ins>_ Now, the rows of $A$ are linearly dependent. Therefore, $A$ is not full rank. Therefore, there is no exact solution. We need to find the best approximation of $b$ in $\text{range}(A)$.
+_<ins>Solution:</ins>_ Now, the rows of $A$ are linearly dependent. Therefore, $A$ is not full column rank. Therefore, there is no exact solution. We need to find the best approximation of $b$ in $\text{range}(A)$.
 
 $$b^* = \begin{bmatrix} \bar l \\ \bar l \\ \bar l \\ \bar l \end{bmatrix} \text{ where } \bar l = \frac{l_1+l_2+l_3+l_4}{4}$$
 

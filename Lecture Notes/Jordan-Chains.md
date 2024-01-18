@@ -142,7 +142,7 @@ _consider the case:_ $\Big \{ \Sigma_i^{m_i-1}x, \Sigma_i^{m_i-2}x, \cdots, \Sig
 --------------------------------------------------------------------------------------------------------------
 
 ### Special Case II ###
-***$A$ has a single eigenvalue $\lambda_i$ and $ m_i = 1***
+***$A$ has a single eigenvalue $\lambda_i$ and $ m_i = 1$***
 
 ```
  ┌───────────────────────────────────────────────┐
@@ -241,7 +241,7 @@ choose $x = \begin{bmatrix} 1 \\ 1 \\ 0 \\ 1 \end{bmatrix}$
 Then $ \Big \{ \Sigma_1x, x \Big \} = \Big \{ \begin{bmatrix} 1 \\ 0 \\ 0 \\ 1 \end{bmatrix}, \begin{bmatrix} 1 \\ 1 \\ 0 \\ 1 \end{bmatrix} \Big \} $
 
 choose $y = \begin{bmatrix} 0 \\ 0 \\ 1 \\ 0 \end{bmatrix}$
-Then $ \Big \{y \Big \} = \Big \{ \begin{bmatrix} 1 \\ 0 \\ 0 \\ 0 \end{bmatrix} \Big \} $
+Then $ \Big \{y \Big \} = \Big \{ \begin{bmatrix} 0 \\ 0 \\ 1 \\ 0 \end{bmatrix} \Big \} $
 
 choose $z = \begin{bmatrix} 0 \\ 0 \\ 0 \\ 1 \end{bmatrix}$
 Then $ \Big \{z \Big \} = \Big \{ \begin{bmatrix} 0 \\ 0 \\ 0 \\ 1 \end{bmatrix} \Big \} $
