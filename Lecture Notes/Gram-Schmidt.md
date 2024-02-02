@@ -1,9 +1,14 @@
 ###### Linear Spaces ######
 ## Gram-Schmidt Orthogonalization ##
 
-<p align="center">
+<!-- <p align="center">
   <img rotate ="90" 
   style="filter: invert(88.4%);"
+  src="figures/gram-schmidt-orthagonalization.gif" />
+</p> -->
+
+<p align="center">
+  <img rotate ="90" 
   src="figures/gram-schmidt-orthagonalization.gif" />
 </p>
 

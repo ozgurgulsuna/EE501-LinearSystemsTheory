@@ -1,0 +1,1 @@
+to create pdf from html documents use 5 mm side margins and 10 mm top margins, print at 88% scale. 
